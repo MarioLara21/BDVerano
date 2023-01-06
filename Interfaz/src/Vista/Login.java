@@ -67,7 +67,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel6.setText("Historias más vistas ");
-        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 302, 65));
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, 60));
 
         btnLogin.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnLogin.setText("Ingresar");
@@ -110,7 +110,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Roboto Light", 3, 14)); // NOI18N
         jLabel7.setText("No está Registrado?");
-        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 158, -1));
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 158, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/8124779.png"))); // NOI18N
@@ -132,7 +132,7 @@ public class Login extends javax.swing.JFrame {
                 btnRegistroActionPerformed(evt);
             }
         });
-        background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 111, 20));
+        background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 111, 20));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

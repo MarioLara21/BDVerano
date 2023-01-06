@@ -28,63 +28,59 @@ public class SignUp extends javax.swing.JFrame {
 
         SignUpPanel = new javax.swing.JPanel();
         TextoSignupLabel = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         FirstName_field = new javax.swing.JTextField();
-        Phone_field = new javax.swing.JTextField();
-        mail_field = new javax.swing.JTextField();
-        LastName_field = new javax.swing.JTextField();
-        Address_field = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         Combo_field = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        FirstName_field1 = new javax.swing.JTextField();
+        FirstName_field2 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel12 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        FirstName_field4 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        FirstName_field5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        SignUpPanel.setBackground(new java.awt.Color(153, 204, 255));
+        SignUpPanel.setBackground(new java.awt.Color(255, 255, 255));
         SignUpPanel.setBorder(new javax.swing.border.MatteBorder(null));
         SignUpPanel.setForeground(new java.awt.Color(242, 242, 242));
+        SignUpPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TextoSignupLabel.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
-        TextoSignupLabel.setText("Register");
-
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setText("State");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setText("City");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("Country");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setText("Gender");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("Email");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Phone");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Last Name");
+        TextoSignupLabel.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
+        TextoSignupLabel.setText("Registro de usuario: ");
+        SignUpPanel.add(TextoSignupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("First Name");
+        jLabel1.setText("Nombre: ");
+        SignUpPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel9.setText("Address");
+        FirstName_field.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        FirstName_field.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_field.setText("Ingrese su nombre");
+        FirstName_field.setBorder(null);
+        FirstName_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_fieldActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(FirstName_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 220, 20));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("Género: ");
+        SignUpPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 80, -1));
 
         Combo_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
         Combo_field.addActionListener(new java.awt.event.ActionListener() {
@@ -92,123 +88,103 @@ public class SignUp extends javax.swing.JFrame {
                 Combo_fieldActionPerformed(evt);
             }
         });
+        SignUpPanel.add(Combo_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 90, 30));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setText("País:");
+        SignUpPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Costa Rica", " " }));
+        SignUpPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 110, 40));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("Estado: ");
+        SignUpPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "San Jose", "Cartago", "Alajuela", "Puntarenas", "Heredia", "Limon", "Guanacaste" }));
+        SignUpPanel.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 110, 40));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setText("Ciudad: ");
+        SignUpPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, -1, -1));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SignUpPanel.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 170, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combo_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FirstName_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LastName_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Address_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mail_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Phone_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(207, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(FirstName_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(LastName_field, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Phone_field, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(mail_field, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Combo_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(Address_field, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 210, 10));
 
-        javax.swing.GroupLayout SignUpPanelLayout = new javax.swing.GroupLayout(SignUpPanel);
-        SignUpPanel.setLayout(SignUpPanelLayout);
-        SignUpPanelLayout.setHorizontalGroup(
-            SignUpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUpPanelLayout.createSequentialGroup()
-                .addGroup(SignUpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignUpPanelLayout.createSequentialGroup()
-                        .addGap(342, 342, 342)
-                        .addComponent(TextoSignupLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SignUpPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(293, Short.MAX_VALUE))
-        );
-        SignUpPanelLayout.setVerticalGroup(
-            SignUpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUpPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(TextoSignupLabel)
-                .addGap(63, 63, 63)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
-        );
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 10));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setText("Apellido:");
+        SignUpPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        FirstName_field1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        FirstName_field1.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_field1.setText("Ingrese su apellido");
+        FirstName_field1.setBorder(null);
+        FirstName_field1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_field1ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(FirstName_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 220, 20));
+
+        FirstName_field2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        FirstName_field2.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_field2.setText("Ingrese su número de telefono");
+        FirstName_field2.setBorder(null);
+        FirstName_field2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_field2ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(FirstName_field2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 220, 20));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setText("Número de telefono: ");
+        SignUpPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 210, 10));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setText("Dirección de correo: ");
+        SignUpPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 210, 10));
+
+        FirstName_field4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        FirstName_field4.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_field4.setText("Ingrese su dirección de correo");
+        FirstName_field4.setBorder(null);
+        FirstName_field4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_field4ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(FirstName_field4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, 20));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel13.setText("Dirección de correo: ");
+        SignUpPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
+
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 290, 10));
+
+        FirstName_field5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        FirstName_field5.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_field5.setText("Ingrese su dirección:");
+        FirstName_field5.setBorder(null);
+        FirstName_field5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_field5ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(FirstName_field5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 220, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,14 +192,14 @@ public class SignUp extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 276, Short.MAX_VALUE))
         );
 
         pack();
@@ -232,6 +208,26 @@ public class SignUp extends javax.swing.JFrame {
     private void Combo_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Combo_fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Combo_fieldActionPerformed
+
+    private void FirstName_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_fieldActionPerformed
+
+    private void FirstName_field1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_field1ActionPerformed
+
+    private void FirstName_field2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_field2ActionPerformed
+
+    private void FirstName_field4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_field4ActionPerformed
+
+    private void FirstName_field5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_field5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,26 +265,30 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Address_field;
     private javax.swing.JComboBox<String> Combo_field;
     private javax.swing.JTextField FirstName_field;
-    private javax.swing.JTextField LastName_field;
-    private javax.swing.JTextField Phone_field;
+    private javax.swing.JTextField FirstName_field1;
+    private javax.swing.JTextField FirstName_field2;
+    private javax.swing.JTextField FirstName_field4;
+    private javax.swing.JTextField FirstName_field5;
     private javax.swing.JPanel SignUpPanel;
     private javax.swing.JLabel TextoSignupLabel;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField mail_field;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
 }
