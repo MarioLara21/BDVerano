@@ -33,7 +33,9 @@ public class NonAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("News");
@@ -42,6 +44,7 @@ public class NonAdmin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 260, 70));
 
         jButton2.setText("Consultas");
@@ -50,6 +53,7 @@ public class NonAdmin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
         jLabel1.setText("Usuario Registrado");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 450, -1));
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

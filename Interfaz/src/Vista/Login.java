@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author josep
@@ -32,8 +34,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        inputUser = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -43,6 +44,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         btnRegistro = new javax.swing.JButton();
+        inputPassword = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -59,6 +61,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setForeground(new java.awt.Color(204, 204, 204));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -78,22 +81,21 @@ public class Login extends javax.swing.JFrame {
         });
         background.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 110, 20));
 
-        jTextField2.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField2.setText("Ingrese su nombre de usuario");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+        inputUser.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        inputUser.setForeground(new java.awt.Color(153, 153, 153));
+        inputUser.setText("Ingrese su nombre de usuario");
+        inputUser.setBorder(null);
+        inputUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                inputUserMousePressed(evt);
             }
         });
-        background.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, 20));
-
-        jTextField1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Ingrese su contraseña");
-        jTextField1.setBorder(null);
-        background.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 170, 20));
+        inputUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUserActionPerformed(evt);
+            }
+        });
+        background.add(inputUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, 20));
 
         jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         jLabel1.setText("INICIAR SESIÓN");
@@ -133,6 +135,21 @@ public class Login extends javax.swing.JFrame {
             }
         });
         background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 111, 20));
+
+        inputPassword.setForeground(new java.awt.Color(204, 204, 204));
+        inputPassword.setText("*****");
+        inputPassword.setBorder(null);
+        inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                inputPasswordMousePressed(evt);
+            }
+        });
+        inputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPasswordActionPerformed(evt);
+            }
+        });
+        background.add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 170, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,9 +197,36 @@ public class Login extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnRegistroActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void inputUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_inputUserActionPerformed
+
+    private void inputUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputUserMousePressed
+        if (inputUser.getText().equals("Ingrese su nombre de usuario")){
+        inputUser.setText("");
+        inputUser.setForeground(Color.black);
+        }
+        if (String.valueOf(inputPassword.getPassword()).isEmpty()){
+            inputPassword.setText("*****");
+            inputPassword.setForeground(Color.gray);
+        }
+        
+    }//GEN-LAST:event_inputUserMousePressed
+
+    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
+        
+    }//GEN-LAST:event_inputPasswordActionPerformed
+
+    private void inputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPasswordMousePressed
+        if (String.valueOf(inputPassword.getPassword()).equals("*****")){
+            inputPassword.setText("");
+            inputPassword.setForeground(Color.black);
+        }
+        if (inputUser.getText().isEmpty()){
+            inputUser.setText("Ingrese su nombre de usuario");
+            inputUser.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_inputPasswordMousePressed
 
     /**
      * @param args the command line arguments
@@ -226,6 +270,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistro;
+    private javax.swing.JPasswordField inputPassword;
+    private javax.swing.JTextField inputUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -238,7 +284,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
