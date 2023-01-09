@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/josep/Desktop/prueba%20interfaz%20conexion%20colombia%20costa%20rica/Interfaz/src/Controlador/AdmNews.java</file>
-            <file>file:/C:/Users/josep/Desktop/prueba%20interfaz%20conexion%20colombia%20costa%20rica/Interfaz/src/Controlador/conexion.java</file>
-            <file>file:/C:/Users/josep/Desktop/prueba%20interfaz%20conexion%20colombia%20costa%20rica/Interfaz/src/Controlador/AdmAdmins.java</file>
-            <file>file:/C:/Users/josep/Desktop/prueba%20interfaz%20conexion%20colombia%20costa%20rica/Interfaz/src/interfaz/Interfaz.java</file>
-            <file>file:/C:/Users/josep/Desktop/prueba%20interfaz%20conexion%20colombia%20costa%20rica/Interfaz/src/Controlador/AdmUsuarios.java</file>
-            <file>file:/C:/Users/josep/Desktop/prueba%20interfaz%20conexion%20colombia%20costa%20rica/Interfaz/src/Vista/Login.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/Login.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/NonAdmin.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Controlador/conexion.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/SignUp.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/Admin.java</file>
         </group>
     </open-files>
 </project-private>

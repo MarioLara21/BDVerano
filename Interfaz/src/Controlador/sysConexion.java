@@ -10,9 +10,9 @@ public class sysConexion {
     public static Connection obtConection() throws ClassNotFoundException, SQLException{
         
         try{
-            Class.forName("sysConexion");
-            String myDb="jdbc:oracle:thin:@localhost:1521:DBPRUEBA";
-            String user="ge";
+            String myDb="jdbc:oracle:thin:@localhost:1521:BASES2023";
+            String user="pr";
+
             String password="ge";
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             java.sql.Connection connection= DriverManager.getConnection(myDb,user,password);
