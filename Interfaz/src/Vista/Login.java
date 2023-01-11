@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author josep
@@ -28,18 +30,22 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        LoginRegistro = new javax.swing.JPanel();
-        btnRegistro = new javax.swing.JButton();
+        background = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        inputUser = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        NoticiasMasVistas = new javax.swing.JPanel();
-        NoticiasMasRecientes = new javax.swing.JPanel();
-        PartidosDelDia = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        btnRegistro = new javax.swing.JButton();
+        inputPassword = new javax.swing.JPasswordField();
+        jPanel2 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -54,155 +60,127 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LoginRegistro.setBackground(new java.awt.Color(0, 153, 153));
-        LoginRegistro.setToolTipText("");
+        background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setForeground(new java.awt.Color(204, 204, 204));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRegistro.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        btnRegistro.setText("Registrarse");
-        btnRegistro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroActionPerformed(evt);
-            }
-        });
+        jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel5.setText("Historias recientes");
+        background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 240, 60));
 
+        jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel6.setText("Historias más vistas ");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, 60));
+
+        btnLogin.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnLogin.setText("Ingresar");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
+        background.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 110, 20));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Login");
+        inputUser.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        inputUser.setForeground(new java.awt.Color(153, 153, 153));
+        inputUser.setText("Ingrese su nombre de usuario");
+        inputUser.setBorder(null);
+        inputUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                inputUserMousePressed(evt);
+            }
+        });
+        inputUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUserActionPerformed(evt);
+            }
+        });
+        background.add(inputUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, 20));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jLabel1.setText("INICIAR SESIÓN");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 190, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("UserName:");
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        jLabel2.setText("USUARIO: ");
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 80, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("Password");
+        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        jLabel3.setText("CONTRASEÑA: ");
+        background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 110, 20));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Roboto Light", 3, 14)); // NOI18N
         jLabel7.setText("No está Registrado?");
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 158, -1));
 
-        javax.swing.GroupLayout LoginRegistroLayout = new javax.swing.GroupLayout(LoginRegistro);
-        LoginRegistro.setLayout(LoginRegistroLayout);
-        LoginRegistroLayout.setHorizontalGroup(
-            LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginRegistroLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addGroup(LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(LoginRegistroLayout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(LoginRegistroLayout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(btnLogin))
-                    .addComponent(jLabel1))
-                .addContainerGap())
-            .addGroup(LoginRegistroLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegistro)
-                    .addComponent(jLabel7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        LoginRegistroLayout.setVerticalGroup(
-            LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginRegistroLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(LoginRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(btnRegistro)
-                .addGap(33, 33, 33))
-        );
+        jLabel8.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/8124779.png"))); // NOI18N
+        jLabel8.setText("KMDJR");
+        background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 90));
+        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        NoticiasMasVistas.setBackground(new java.awt.Color(255, 204, 204));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 170, 10));
 
-        javax.swing.GroupLayout NoticiasMasVistasLayout = new javax.swing.GroupLayout(NoticiasMasVistas);
-        NoticiasMasVistas.setLayout(NoticiasMasVistasLayout);
-        NoticiasMasVistasLayout.setHorizontalGroup(
-            NoticiasMasVistasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 257, Short.MAX_VALUE)
-        );
-        NoticiasMasVistasLayout.setVerticalGroup(
-            NoticiasMasVistasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
-        );
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 170, 10));
 
-        NoticiasMasRecientes.setBackground(new java.awt.Color(204, 255, 153));
+        btnRegistro.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnRegistro.setText("Registrarse");
+        btnRegistro.setBorder(null);
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroActionPerformed(evt);
+            }
+        });
+        background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 111, 20));
 
-        javax.swing.GroupLayout NoticiasMasRecientesLayout = new javax.swing.GroupLayout(NoticiasMasRecientes);
-        NoticiasMasRecientes.setLayout(NoticiasMasRecientesLayout);
-        NoticiasMasRecientesLayout.setHorizontalGroup(
-            NoticiasMasRecientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-        );
-        NoticiasMasRecientesLayout.setVerticalGroup(
-            NoticiasMasRecientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
-        );
+        inputPassword.setForeground(new java.awt.Color(204, 204, 204));
+        inputPassword.setText("*****");
+        inputPassword.setBorder(null);
+        inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                inputPasswordMousePressed(evt);
+            }
+        });
+        inputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPasswordActionPerformed(evt);
+            }
+        });
+        background.add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 170, -1));
 
-        PartidosDelDia.setBackground(new java.awt.Color(204, 204, 255));
-
-        javax.swing.GroupLayout PartidosDelDiaLayout = new javax.swing.GroupLayout(PartidosDelDia);
-        PartidosDelDia.setLayout(PartidosDelDiaLayout);
-        PartidosDelDiaLayout.setHorizontalGroup(
-            PartidosDelDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 499, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 717, Short.MAX_VALUE)
         );
-        PartidosDelDiaLayout.setVerticalGroup(
-            PartidosDelDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 104, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 535, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(LoginRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(NoticiasMasVistas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(NoticiasMasRecientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(PartidosDelDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(367, 367, 367)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(320, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LoginRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NoticiasMasVistas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NoticiasMasRecientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(PartidosDelDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -218,6 +196,37 @@ public class Login extends javax.swing.JFrame {
        this.setVisible(false);
        
     }//GEN-LAST:event_btnRegistroActionPerformed
+
+    private void inputUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUserActionPerformed
+
+    private void inputUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputUserMousePressed
+        if (inputUser.getText().equals("Ingrese su nombre de usuario")){
+        inputUser.setText("");
+        inputUser.setForeground(Color.black);
+        }
+        if (String.valueOf(inputPassword.getPassword()).isEmpty()){
+            inputPassword.setText("*****");
+            inputPassword.setForeground(Color.gray);
+        }
+        
+    }//GEN-LAST:event_inputUserMousePressed
+
+    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
+        
+    }//GEN-LAST:event_inputPasswordActionPerformed
+
+    private void inputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPasswordMousePressed
+        if (String.valueOf(inputPassword.getPassword()).equals("*****")){
+            inputPassword.setText("");
+            inputPassword.setForeground(Color.black);
+        }
+        if (inputUser.getText().isEmpty()){
+            inputUser.setText("Ingrese su nombre de usuario");
+            inputUser.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_inputPasswordMousePressed
 
     /**
      * @param args the command line arguments
@@ -258,18 +267,22 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel LoginRegistro;
-    private javax.swing.JPanel NoticiasMasRecientes;
-    private javax.swing.JPanel NoticiasMasVistas;
-    private javax.swing.JPanel PartidosDelDia;
+    private javax.swing.JPanel background;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistro;
+    private javax.swing.JPasswordField inputPassword;
+    private javax.swing.JTextField inputUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }
