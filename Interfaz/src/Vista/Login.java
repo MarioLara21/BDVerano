@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class Login extends javax.swing.JFrame {
@@ -44,6 +45,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         btnRegistro = new javax.swing.JButton();
         inputPassword = new javax.swing.JPasswordField();
+        Close_btn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -147,6 +149,14 @@ public class Login extends javax.swing.JFrame {
         });
         background.add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 170, -1));
 
+        Close_btn.setText("Salir");
+        Close_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Close_btnActionPerformed(evt);
+            }
+        });
+        background.add(Close_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,7 +192,7 @@ public class Login extends javax.swing.JFrame {
                 this.setVisible(false);
             }
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(rootPane, "Usuario no existe, registrese");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -224,6 +234,10 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_inputPasswordMousePressed
 
+    private void Close_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close_btnActionPerformed
+       this.dispose(); 
+    }//GEN-LAST:event_Close_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,6 +277,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Close_btn;
     private javax.swing.JPanel background;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistro;
