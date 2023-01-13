@@ -17,7 +17,7 @@ public class sysConexion {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             java.sql.Connection connection= DriverManager.getConnection(myDb,user,password);
             return (Connection) connection;
-        }   catch(SQLException e){
+        }catch(SQLException e){
             System.out.println("El error es: "+ e);
             return null;
         }   
