@@ -31,5 +31,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+Interfaz/build/classes/Controlador/AdmAdmins.class
+Interfaz/build/classes/Vista/Admin.class
+*.class
+*.class
 *.xml
 *.properties
