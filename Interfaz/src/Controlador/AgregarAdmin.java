@@ -20,9 +20,9 @@ public class AgregarAdmin {
         try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
         
-        String dbURL = "jdbc:oracle:thin:@localhost:1521:DBPRUEBA";
-        String username = "ge";
-        String password = "ge";
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:BASES2023";
+        String username = "pr"; 
+        String password = "pr";
         connection = DriverManager.getConnection(dbURL,username, password);
         
         System.out.println("Enter choice");
@@ -47,7 +47,7 @@ public class AgregarAdmin {
   private void insertRecord() throws SQLException {
       System.out.println("inside insert record()");
       
-      String sql = "INSERT INTO PERSON(id_person,first_name, last_name, date_of_birth,Age, Salary) VALUES(2,'Jose', 'Campos', sysdate, 6, 6000) ";
+      String sql = "INSERT INTO PERSON(id_person,first_name, last_name, date_of_birth,id_photo, gender, id_adress,id_audit) VALUES(s_person.nextval,'Cristiano', 'Ronaldo', '14-SEP-2000', 1, 'masculine', 1,NULL);  ";
       
       PreparedStatement preparedStatement = connection.prepareStatement(sql);
       int rows = preparedStatement.executeUpdate();

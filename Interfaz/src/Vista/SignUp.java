@@ -27,30 +27,38 @@ public class SignUp extends javax.swing.JFrame {
     private void initComponents() {
 
         SignUpPanel = new javax.swing.JPanel();
-        TextoSignupLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        FirstName_field = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblSignUp = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JLabel();
+        txtFirstName = new javax.swing.JTextField();
+        lblGender = new javax.swing.JLabel();
         Combo_field = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
+        lblCountry = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
+        lblState = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
+        lblCity = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        FirstName_field1 = new javax.swing.JTextField();
-        FirstName_field2 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        txtPhoneNum = new javax.swing.JTextField();
+        lblPhoneNum = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel12 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        FirstName_field4 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblAddress = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
-        FirstName_field5 = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        btnSignUp = new javax.swing.JButton();
+        lblFirstName1 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        txtUsername = new javax.swing.JTextField();
+        lblLastName1 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        lblFirstName2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,28 +67,26 @@ public class SignUp extends javax.swing.JFrame {
         SignUpPanel.setForeground(new java.awt.Color(242, 242, 242));
         SignUpPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TextoSignupLabel.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
-        TextoSignupLabel.setText("Registro de usuario: ");
-        SignUpPanel.add(TextoSignupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, -1));
+        lblSignUp.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
+        lblSignUp.setText("Registro de usuario: ");
+        SignUpPanel.add(lblSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Nombre: ");
-        SignUpPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        lblFirstName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblFirstName.setText("Nombre: ");
+        SignUpPanel.add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
-        FirstName_field.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field.setText("Ingrese su nombre");
-        FirstName_field.setBorder(null);
-        FirstName_field.addActionListener(new java.awt.event.ActionListener() {
+        txtFirstName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtFirstName.setBorder(null);
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_fieldActionPerformed(evt);
+                txtFirstNameActionPerformed(evt);
             }
         });
-        SignUpPanel.add(FirstName_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 220, 20));
+        SignUpPanel.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 210, 20));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setText("Género: ");
-        SignUpPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 80, -1));
+        lblGender.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblGender.setText("Género: ");
+        SignUpPanel.add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 80, -1));
 
         Combo_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
         Combo_field.addActionListener(new java.awt.event.ActionListener() {
@@ -88,28 +94,28 @@ public class SignUp extends javax.swing.JFrame {
                 Combo_fieldActionPerformed(evt);
             }
         });
-        SignUpPanel.add(Combo_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 90, 30));
+        SignUpPanel.add(Combo_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 100, 40));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("País:");
-        SignUpPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
+        lblCountry.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblCountry.setText("País:");
+        SignUpPanel.add(lblCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Costa Rica", " " }));
-        SignUpPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 110, 40));
+        SignUpPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 110, 40));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setText("Estado: ");
-        SignUpPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
+        lblState.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblState.setText("Estado: ");
+        SignUpPanel.add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "San Jose", "Cartago", "Alajuela", "Puntarenas", "Heredia", "Limon", "Guanacaste" }));
-        SignUpPanel.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 110, 40));
+        SignUpPanel.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 110, 40));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setText("Ciudad: ");
-        SignUpPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, -1, -1));
+        lblCity.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblCity.setText("Ciudad: ");
+        SignUpPanel.add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        SignUpPanel.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 170, 40));
+        SignUpPanel.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 170, 40));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         SignUpPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 210, 10));
@@ -117,89 +123,125 @@ public class SignUp extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         SignUpPanel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 10));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel10.setText("Apellido:");
-        SignUpPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        lblLastName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblLastName.setText("Apellido:");
+        SignUpPanel.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
-        FirstName_field1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field1.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field1.setText("Ingrese su apellido");
-        FirstName_field1.setBorder(null);
-        FirstName_field1.addActionListener(new java.awt.event.ActionListener() {
+        txtLastName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtLastName.setBorder(null);
+        txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_field1ActionPerformed(evt);
+                txtLastNameActionPerformed(evt);
             }
         });
-        SignUpPanel.add(FirstName_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 220, 20));
+        SignUpPanel.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 210, 20));
 
-        FirstName_field2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field2.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field2.setText("Ingrese su número de telefono");
-        FirstName_field2.setBorder(null);
-        FirstName_field2.addActionListener(new java.awt.event.ActionListener() {
+        txtPhoneNum.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtPhoneNum.setBorder(null);
+        txtPhoneNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_field2ActionPerformed(evt);
+                txtPhoneNumActionPerformed(evt);
             }
         });
-        SignUpPanel.add(FirstName_field2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 220, 20));
+        SignUpPanel.add(txtPhoneNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 210, 20));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel11.setText("Número de telefono: ");
-        SignUpPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+        lblPhoneNum.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblPhoneNum.setText("Número de telefono: ");
+        SignUpPanel.add(lblPhoneNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
         SignUpPanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 210, 10));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel12.setText("Dirección de correo: ");
-        SignUpPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblEmail.setText("Dirección de correo: ");
+        SignUpPanel.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         SignUpPanel.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 210, 10));
 
-        FirstName_field4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field4.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field4.setText("Ingrese su dirección de correo");
-        FirstName_field4.setBorder(null);
-        FirstName_field4.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtEmail.setBorder(null);
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_field4ActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
-        SignUpPanel.add(FirstName_field4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, 20));
+        SignUpPanel.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 210, 20));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel13.setText("Dirección de correo: ");
-        SignUpPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
+        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblAddress.setText("Dirección exacta: ");
+        SignUpPanel.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, -1, -1));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        SignUpPanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 290, 10));
+        SignUpPanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 290, 10));
 
-        FirstName_field5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field5.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field5.setText("Ingrese su dirección:");
-        FirstName_field5.setBorder(null);
-        FirstName_field5.addActionListener(new java.awt.event.ActionListener() {
+        txtAddress.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtAddress.setForeground(new java.awt.Color(153, 153, 153));
+        txtAddress.setBorder(null);
+        txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_field5ActionPerformed(evt);
+                txtAddressActionPerformed(evt);
             }
         });
-        SignUpPanel.add(FirstName_field5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 220, 20));
+        SignUpPanel.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 290, 20));
+
+        btnSignUp.setText("Registrarse");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 170, 40));
+
+        lblFirstName1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblFirstName1.setText("Fecha de nacimiento: ");
+        SignUpPanel.add(lblFirstName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, -1, 20));
+
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 330, 210, 10));
+
+        txtUsername.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtUsername.setBorder(null);
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 310, 210, 20));
+
+        lblLastName1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblLastName1.setText("Contraseña:");
+        SignUpPanel.add(lblLastName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, -1, 20));
+
+        txtPassword.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtPassword.setBorder(null);
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 390, 210, 20));
+
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, 210, 10));
+
+        lblFirstName2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblFirstName2.setText("Usuario:");
+        SignUpPanel.add(lblFirstName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1036, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 276, Short.MAX_VALUE))
+                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 203, Short.MAX_VALUE))
         );
 
         pack();
@@ -209,25 +251,37 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Combo_fieldActionPerformed
 
-    private void FirstName_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_fieldActionPerformed
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_fieldActionPerformed
+    }//GEN-LAST:event_txtFirstNameActionPerformed
 
-    private void FirstName_field1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field1ActionPerformed
+    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_field1ActionPerformed
+    }//GEN-LAST:event_txtLastNameActionPerformed
 
-    private void FirstName_field2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field2ActionPerformed
+    private void txtPhoneNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_field2ActionPerformed
+    }//GEN-LAST:event_txtPhoneNumActionPerformed
 
-    private void FirstName_field4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field4ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_field4ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void FirstName_field5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field5ActionPerformed
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_field5ActionPerformed
+    }//GEN-LAST:event_txtAddressActionPerformed
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,29 +320,39 @@ public class SignUp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Combo_field;
-    private javax.swing.JTextField FirstName_field;
-    private javax.swing.JTextField FirstName_field1;
-    private javax.swing.JTextField FirstName_field2;
-    private javax.swing.JTextField FirstName_field4;
-    private javax.swing.JTextField FirstName_field5;
     private javax.swing.JPanel SignUpPanel;
-    private javax.swing.JLabel TextoSignupLabel;
+    private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblCity;
+    private javax.swing.JLabel lblCountry;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblFirstName1;
+    private javax.swing.JLabel lblFirstName2;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblLastName1;
+    private javax.swing.JLabel lblPhoneNum;
+    private javax.swing.JLabel lblSignUp;
+    private javax.swing.JLabel lblState;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtPhoneNum;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
+
+
 }

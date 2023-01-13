@@ -1,4 +1,4 @@
-
+/*
 package Controlador;
 import com.sun.jdi.connect.spi.Connection;
 import java.sql.*;
@@ -12,3 +12,4 @@ public class AdmAdmins {
     }
     
 }
+*/
