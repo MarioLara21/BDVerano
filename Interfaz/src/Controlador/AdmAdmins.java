@@ -1,8 +1,8 @@
-/*
+
 package Controlador;
 import com.sun.jdi.connect.spi.Connection;
 import java.sql.*;
-
+/*
 public class AdmAdmins {
    
     public static void LoginAdmins(int id)throws SQLException{
@@ -10,6 +10,6 @@ public class AdmAdmins {
         PreparedStatement sql = conn.;
         
     }
-    
+   
 }
 */

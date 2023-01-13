@@ -63,8 +63,8 @@ public class AgregarAdmin {
       long millis = System.currentTimeMillis();
       java.sql.Date date = new java.sql.Date(millis);
       PreparedStatement cStmt = connection.prepareCall( "{call adminPerson.insertPerson(?,?,?,?,?)}");
-      cStmt.setString(1,"Dani");
-      cStmt.setString(2,"Timida");
+      cStmt.setString(1,"Maro");
+      cStmt.setString(2,"wak");
       cStmt.setString(3,"23-JAN-22");
       cStmt.setInt(4,1);
       cStmt.setInt(5,100000);
