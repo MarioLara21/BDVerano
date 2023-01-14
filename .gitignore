@@ -19,10 +19,8 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+#Netbeans GitIgnore
 
-#Netbeans Gitignore
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
 **/nbproject/Package-*.bash
@@ -31,5 +29,11 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+Interfaz/build/classes/Controlador/AdmAdmins.class
+Interfaz/build/classes/Vista/Admin.class
+*.class
 *.xml
 *.properties
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
