@@ -47,6 +47,7 @@ public class Login extends javax.swing.JFrame {
         btnRegistro = new javax.swing.JButton();
         inputPassword = new javax.swing.JPasswordField();
         Close_btn = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -70,8 +71,8 @@ public class Login extends javax.swing.JFrame {
         background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 240, 60));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel6.setText("Historias más vistas ");
-        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, 60));
+        jLabel6.setText("Partidos del día");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 230, 60));
 
         btnLogin.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnLogin.setText("Ingresar");
@@ -80,7 +81,7 @@ public class Login extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        background.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 110, 20));
+        background.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 110, 20));
 
         inputUser.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         inputUser.setForeground(new java.awt.Color(153, 153, 153));
@@ -112,7 +113,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Roboto Light", 3, 14)); // NOI18N
         jLabel7.setText("No está Registrado?");
-        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 158, -1));
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 158, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/8124779.png"))); // NOI18N
@@ -134,7 +135,7 @@ public class Login extends javax.swing.JFrame {
                 btnRegistroActionPerformed(evt);
             }
         });
-        background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 111, 20));
+        background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 111, 20));
 
         inputPassword.setForeground(new java.awt.Color(204, 204, 204));
         inputPassword.setBorder(null);
@@ -156,15 +157,19 @@ public class Login extends javax.swing.JFrame {
                 Close_btnActionPerformed(evt);
             }
         });
-        background.add(Close_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
+        background.add(Close_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel9.setText("Historias más vistas ");
+        background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 240, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,6 +296,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
