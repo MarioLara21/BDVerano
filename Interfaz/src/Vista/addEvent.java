@@ -6,6 +6,8 @@ package Vista;
 
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.util.*;
+import java.text.*;
 
 /**
  *
@@ -210,7 +212,13 @@ public class addEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_goBackButtonActionPerformed
 
     private void addEventButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEventButtonActionPerformed
-        // TODO add your handling code here:
+        String eventName = eventNameInput.getText();
+        Date startDate = startDateInput.getDate();
+        Date endDate = endDateInput.getDate();
+        String strStartDate = DateFormat.getDateInstance().format(startDate);
+        String strEndDate = DateFormat.getDateInstance().format(endDate);
+        String eventType = eventTypeCombobox.getSelectedItem().toString();
+        javax.swing.JOptionPane.showMessageDialog(this,eventName + " " + strStartDate + " " + strEndDate + " " + eventType);
     }//GEN-LAST:event_addEventButtonActionPerformed
 
     /**
