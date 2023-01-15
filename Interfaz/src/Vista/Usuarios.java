@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author maro
  */
 public class Usuarios extends javax.swing.JFrame {
-
     /**
      * Creates new form Usuarios
      */
@@ -41,6 +45,8 @@ public class Usuarios extends javax.swing.JFrame {
         LabelConsultar = new javax.swing.JLabel();
         BotonEliminar = new javax.swing.JPanel();
         LabelEliminar = new javax.swing.JLabel();
+        PanelActualizar = new javax.swing.JPanel();
+        TextoActualizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,14 +65,14 @@ public class Usuarios extends javax.swing.JFrame {
         TablaUsuarios.setAutoCreateRowSorter(true);
         TablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "Hola", "", null, null, null, null, null}
+
             },
             new String [] {
-                "Id_RegisteredUser", "Password", "Username", "Id_person", "CreationDate", "CreationUser", "LastModDate", "LastModUser"
+                "Id_RegisteredUser", "Ru_Password", "Ru_Username", "Id_Person", "Id_Audit", "CreationDate", "CreationUser", "LastModificationDate", "LastModificationUser"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -74,18 +80,18 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
         TablaUsuarios.setToolTipText("");
+        TablaUsuarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         TablaUsuarios.setColumnSelectionAllowed(true);
         TablaUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         TablaUsuarios.setName(""); // NOI18N
         TablaUsuarios.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
         TablaUsuarios.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         TablaUsuarios.setShowGrid(true);
-        TablaUsuarios.setShowHorizontalLines(true);
         TablaUsuarios.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablaUsuarios);
-        TablaUsuarios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        TablaUsuarios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout PanelTablaLayout = new javax.swing.GroupLayout(PanelTabla);
         PanelTabla.setLayout(PanelTablaLayout);
@@ -205,6 +211,30 @@ public class Usuarios extends javax.swing.JFrame {
 
         PanelPrincipalUsuarios.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 70, -1));
 
+        PanelActualizar.setBackground(new java.awt.Color(204, 255, 255));
+
+        TextoActualizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextoActualizar.setText("Actualizar");
+        TextoActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextoActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextoActualizarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelActualizarLayout = new javax.swing.GroupLayout(PanelActualizar);
+        PanelActualizar.setLayout(PanelActualizarLayout);
+        PanelActualizarLayout.setHorizontalGroup(
+            PanelActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextoActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        PanelActualizarLayout.setVerticalGroup(
+            PanelActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextoActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        PanelPrincipalUsuarios.add(PanelActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 70, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,11 +243,49 @@ public class Usuarios extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipalUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelPrincipalUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TextoActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextoActualizarMouseClicked
+        // TODO add your handling code here:
+        Connection connection = null;
+        try{
+        //Se conecta a la base de datos
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:DBPRUEBA";
+        String username = "pr";
+        String password = "pr";
+        connection = DriverManager.getConnection(dbURL,username, password);
+        Statement st = connection.createStatement();
+        String sql = "Select * from RegisteredUser"; //Query para traer datos
+        ResultSet rs = st.executeQuery(sql);
+        while(rs.next()){
+            //Se agregan los campos de la tabla como variables
+            String id_RU = String.valueOf(rs.getInt("ID_REGISTEREDUSER"));
+            String ru_Password = rs.getString("RU_PASSWORD");
+            String ru_UserName = rs.getString("RU_USERNAME");
+            String id_Person = String.valueOf(rs.getInt("ID_PERSON"));
+            String id_Audit = String.valueOf(rs.getInt("Id_Audit"));
+            String creationDate = String.valueOf(rs.getDate("CREATIONDATE"));
+            String creationUser = rs.getString("CREATIONUSER");
+            String lastModDate = String.valueOf(rs.getDate("LASTMODIFICATIONDATE"));
+            String lastModUser = rs.getString("LASTMODIFICATIONUSER");
+            
+            String tbData[] = {id_RU,ru_Password,ru_UserName,id_Person,id_Audit,
+            creationDate, creationUser, lastModDate, lastModUser }; //Ingreso las variables que tienen los datos
+            DefaultTableModel tbModel = (DefaultTableModel)TablaUsuarios.getModel();
+            
+            tbModel.addRow(tbData); //Agrega una fila a la tabla
+            }
+        }
+     catch (ClassNotFoundException | SQLException e){
+         System.out.println(e.getMessage());
+     }
+         
+    }//GEN-LAST:event_TextoActualizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -265,9 +333,11 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JLabel LabelInsertar;
     private javax.swing.JLabel LabelModificar;
     private javax.swing.JLabel LabelTitulo;
+    private javax.swing.JPanel PanelActualizar;
     private javax.swing.JPanel PanelPrincipalUsuarios;
     private javax.swing.JPanel PanelTabla;
     private javax.swing.JTable TablaUsuarios;
+    private javax.swing.JLabel TextoActualizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
