@@ -4,19 +4,18 @@
  */
 package Vista;
 
-import Modelo.LoginModelo;
 import java.awt.Color;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
-
+/**
+ *
+ * @author josep
+ */
 
 public class Login extends javax.swing.JFrame {
 
-    
-    
+    /**
+     * Creates new form Login
+     */
     public Login() {
         initComponents();
     }
@@ -61,6 +60,9 @@ public class Login extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(490, 400));
+        setMinimumSize(new java.awt.Dimension(490, 400));
+        setPreferredSize(new java.awt.Dimension(490, 400));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setForeground(new java.awt.Color(204, 204, 204));
@@ -85,6 +87,7 @@ public class Login extends javax.swing.JFrame {
 
         inputUser.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         inputUser.setForeground(new java.awt.Color(153, 153, 153));
+        inputUser.setText("Ingrese su nombre de usuario");
         inputUser.setBorder(null);
         inputUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -105,7 +108,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel2.setText("USUARIO: ");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 80, 20));
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 80, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel3.setText("CONTRASEÑA: ");
@@ -138,6 +141,7 @@ public class Login extends javax.swing.JFrame {
         background.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 111, 20));
 
         inputPassword.setForeground(new java.awt.Color(204, 204, 204));
+        inputPassword.setText("*****");
         inputPassword.setBorder(null);
         inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -168,38 +172,25 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+
                 .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 107, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(215, 215, 215))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
-        try {
-            boolean flag_temp;
-            flag_temp = LoginModelo.Login(inputUser.getText(), inputPassword.getText());
-            
-            if(flag_temp==true){
-                Admin adm=new Admin();
-                adm.setVisible(true);
-                this.setVisible(false);
-            }
-            else{
-                NonAdmin nadm= new NonAdmin();
-                nadm.setVisible(true);
-                this.setVisible(false);
-            }
-        } catch (SQLException | ClassNotFoundException ex) {
-             JOptionPane.showMessageDialog(rootPane, "Usuario no existe, registrese");
-        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
@@ -240,10 +231,6 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_inputPasswordMousePressed
 
-    private void Close_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close_btnActionPerformed
-       this.dispose(); 
-    }//GEN-LAST:event_Close_btnActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -283,7 +270,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Close_btn;
     private javax.swing.JPanel background;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistro;
@@ -296,7 +282,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+
     private javax.swing.JLabel jLabel9;
+
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
