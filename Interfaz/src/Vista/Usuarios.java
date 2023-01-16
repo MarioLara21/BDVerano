@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author maro
  */
 public class Usuarios extends javax.swing.JFrame {
-
     /**
      * Creates new form Usuarios
      */
@@ -26,177 +30,262 @@ public class Usuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        textusuarios = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        PanelPrincipalUsuarios = new javax.swing.JPanel();
+        LabelTitulo = new javax.swing.JLabel();
+        PanelTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        PanelCerrar = new javax.swing.JPanel();
+        TablaUsuarios = new javax.swing.JTable();
+        BotonInsertar = new javax.swing.JPanel();
+        LabelInsertar = new javax.swing.JLabel();
+        BotonModificar = new javax.swing.JPanel();
+        LabelModificar = new javax.swing.JLabel();
+        BotonCerrar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
+        BotonConsultar = new javax.swing.JPanel();
+        LabelConsultar = new javax.swing.JLabel();
+        BotonEliminar = new javax.swing.JPanel();
+        LabelEliminar = new javax.swing.JLabel();
+        PanelActualizar = new javax.swing.JPanel();
+        TextoActualizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelPrincipalUsuarios.setBackground(new java.awt.Color(204, 204, 255));
+        PanelPrincipalUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PanelPrincipalUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textusuarios.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        textusuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textusuarios.setText("Usuarios");
-        jPanel1.add(textusuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 260, 40));
-        textusuarios.getAccessibleContext().setAccessibleDescription("");
+        LabelTitulo.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        LabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelTitulo.setText("Usuarios");
+        PanelPrincipalUsuarios.add(LabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 120, 40));
+        LabelTitulo.getAccessibleContext().setAccessibleDescription("");
 
         jScrollPane1.setBorder(null);
 
-        jTable1.setAutoCreateColumnsFromModel(false);
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaUsuarios.setAutoCreateRowSorter(true);
+        TablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Id_Person", "First_Name", "Last_Name", "Date_Of_Birth", "Id_Photo", "Gender", "Id_Address"
+                "Id_RegisteredUser", "Ru_Password", "Ru_Username", "Id_Person", "Id_Audit", "CreationDate", "CreationUser", "LastModificationDate", "LastModificationUser"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setName(""); // NOI18N
-        jTable1.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
-        jTable1.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setShowGrid(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        TablaUsuarios.setToolTipText("");
+        TablaUsuarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        TablaUsuarios.setColumnSelectionAllowed(true);
+        TablaUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TablaUsuarios.setName(""); // NOI18N
+        TablaUsuarios.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
+        TablaUsuarios.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
+        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        TablaUsuarios.setShowGrid(true);
+        TablaUsuarios.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(TablaUsuarios);
+        TablaUsuarios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+        javax.swing.GroupLayout PanelTablaLayout = new javax.swing.GroupLayout(PanelTabla);
+        PanelTabla.setLayout(PanelTablaLayout);
+        PanelTablaLayout.setHorizontalGroup(
+            PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        PanelTablaLayout.setVerticalGroup(
+            PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTablaLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 70, 30));
+        PanelPrincipalUsuarios.add(PanelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+        BotonInsertar.setBackground(new java.awt.Color(204, 255, 255));
+        BotonInsertar.setToolTipText("");
+
+        LabelInsertar.setBackground(new java.awt.Color(204, 204, 255));
+        LabelInsertar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelInsertar.setLabelFor(BotonInsertar);
+        LabelInsertar.setText("Insertar");
+        LabelInsertar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout BotonInsertarLayout = new javax.swing.GroupLayout(BotonInsertar);
+        BotonInsertar.setLayout(BotonInsertarLayout);
+        BotonInsertarLayout.setHorizontalGroup(
+            BotonInsertarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelInsertar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        BotonInsertarLayout.setVerticalGroup(
+            BotonInsertarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelInsertar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, -1, -1));
+        PanelPrincipalUsuarios.add(BotonInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 70, 30));
 
-        PanelCerrar.setBackground(new java.awt.Color(153, 204, 255));
+        BotonModificar.setBackground(new java.awt.Color(204, 255, 255));
+
+        LabelModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelModificar.setLabelFor(BotonModificar);
+        LabelModificar.setText("Modificar");
+        LabelModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout BotonModificarLayout = new javax.swing.GroupLayout(BotonModificar);
+        BotonModificar.setLayout(BotonModificarLayout);
+        BotonModificarLayout.setHorizontalGroup(
+            BotonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        BotonModificarLayout.setVerticalGroup(
+            BotonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        PanelPrincipalUsuarios.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, -1, -1));
+
+        BotonCerrar.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
+        jLabel1.setText("<--");
         jLabel1.setToolTipText("");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout PanelCerrarLayout = new javax.swing.GroupLayout(PanelCerrar);
-        PanelCerrar.setLayout(PanelCerrarLayout);
-        PanelCerrarLayout.setHorizontalGroup(
-            PanelCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout BotonCerrarLayout = new javax.swing.GroupLayout(BotonCerrar);
+        BotonCerrar.setLayout(BotonCerrarLayout);
+        BotonCerrarLayout.setHorizontalGroup(
+            BotonCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
-        PanelCerrarLayout.setVerticalGroup(
-            PanelCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        BotonCerrarLayout.setVerticalGroup(
+            BotonCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(PanelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, -1));
+        PanelPrincipalUsuarios.add(BotonCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, -1));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
+        BotonConsultar.setBackground(new java.awt.Color(204, 255, 255));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+        LabelConsultar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelConsultar.setLabelFor(BotonConsultar);
+        LabelConsultar.setText("Consultar");
+        LabelConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+        javax.swing.GroupLayout BotonConsultarLayout = new javax.swing.GroupLayout(BotonConsultar);
+        BotonConsultar.setLayout(BotonConsultarLayout);
+        BotonConsultarLayout.setHorizontalGroup(
+            BotonConsultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        BotonConsultarLayout.setVerticalGroup(
+            BotonConsultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, -1, -1));
+        PanelPrincipalUsuarios.add(BotonConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+        BotonEliminar.setBackground(new java.awt.Color(204, 255, 255));
+
+        LabelEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelEliminar.setLabelFor(BotonEliminar);
+        LabelEliminar.setText("Eliminar");
+        LabelEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout BotonEliminarLayout = new javax.swing.GroupLayout(BotonEliminar);
+        BotonEliminar.setLayout(BotonEliminarLayout);
+        BotonEliminarLayout.setHorizontalGroup(
+            BotonEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+        BotonEliminarLayout.setVerticalGroup(
+            BotonEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 70, -1));
+        PanelPrincipalUsuarios.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 70, -1));
+
+        PanelActualizar.setBackground(new java.awt.Color(204, 255, 255));
+
+        TextoActualizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextoActualizar.setText("Actualizar");
+        TextoActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextoActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextoActualizarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelActualizarLayout = new javax.swing.GroupLayout(PanelActualizar);
+        PanelActualizar.setLayout(PanelActualizarLayout);
+        PanelActualizarLayout.setHorizontalGroup(
+            PanelActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextoActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        PanelActualizarLayout.setVerticalGroup(
+            PanelActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextoActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        PanelPrincipalUsuarios.add(PanelActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 70, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipalUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipalUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TextoActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextoActualizarMouseClicked
+        // TODO add your handling code here:
+        Connection connection = null;
+        try{
+        //Se conecta a la base de datos
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:DBPRUEBA";
+        String username = "pr";
+        String password = "pr";
+        connection = DriverManager.getConnection(dbURL,username, password);
+        Statement st = connection.createStatement();
+        String sql = "Select * from RegisteredUser"; //Query para traer datos
+        ResultSet rs = st.executeQuery(sql);
+        while(rs.next()){
+            //Se agregan los campos de la tabla como variables
+            String id_RU = String.valueOf(rs.getInt("ID_REGISTEREDUSER"));
+            String ru_Password = rs.getString("RU_PASSWORD");
+            String ru_UserName = rs.getString("RU_USERNAME");
+            String id_Person = String.valueOf(rs.getInt("ID_PERSON"));
+            String id_Audit = String.valueOf(rs.getInt("Id_Audit"));
+            String creationDate = String.valueOf(rs.getDate("CREATIONDATE"));
+            String creationUser = rs.getString("CREATIONUSER");
+            String lastModDate = String.valueOf(rs.getDate("LASTMODIFICATIONDATE"));
+            String lastModUser = rs.getString("LASTMODIFICATIONUSER");
+            
+            String tbData[] = {id_RU,ru_Password,ru_UserName,id_Person,id_Audit,
+            creationDate, creationUser, lastModDate, lastModUser }; //Ingreso las variables que tienen los datos
+            DefaultTableModel tbModel = (DefaultTableModel)TablaUsuarios.getModel();
+            
+            tbModel.addRow(tbData); //Agrega una fila a la tabla
+            }
+        }
+     catch (ClassNotFoundException | SQLException e){
+         System.out.println(e.getMessage());
+     }
+         
+    }//GEN-LAST:event_TextoActualizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -234,17 +323,22 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelCerrar;
+    private javax.swing.JPanel BotonCerrar;
+    private javax.swing.JPanel BotonConsultar;
+    private javax.swing.JPanel BotonEliminar;
+    private javax.swing.JPanel BotonInsertar;
+    private javax.swing.JPanel BotonModificar;
+    private javax.swing.JLabel LabelConsultar;
+    private javax.swing.JLabel LabelEliminar;
+    private javax.swing.JLabel LabelInsertar;
+    private javax.swing.JLabel LabelModificar;
+    private javax.swing.JLabel LabelTitulo;
+    private javax.swing.JPanel PanelActualizar;
+    private javax.swing.JPanel PanelPrincipalUsuarios;
+    private javax.swing.JPanel PanelTabla;
+    private javax.swing.JTable TablaUsuarios;
+    private javax.swing.JLabel TextoActualizar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel textusuarios;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/kpala/Desktop/Proyecto/BDVerano/Interfaz/src/Controlador/AdmAdmins.java</file>
             <file>file:/C:/Users/kpala/Desktop/Proyecto/BDVerano/Interfaz/src/Vista/addEvent.java</file>
             <file>file:/C:/Users/kpala/Desktop/Proyecto/BDVerano/Interfaz/src/Vista/SignUp.java</file>
+=======
+            <file>file:/C:/Users/maro/Documents/GitHub/BDVerano/Interfaz/src/Vista/Login.java</file>
+            <file>file:/C:/Users/maro/Documents/GitHub/BDVerano/Interfaz/src/Vista/Admin.java</file>
+            <file>file:/C:/Users/maro/Documents/GitHub/BDVerano/Interfaz/src/Vista/SignUp.java</file>
+            <file>file:/C:/Users/maro/Documents/GitHub/BDVerano/Interfaz/src/Vista/NonAdmin.java</file>
+            <file>file:/C:/Users/maro/Documents/GitHub/BDVerano/Interfaz/src/Vista/Usuarios.java</file>
+>>>>>>> 4f640b9f03bfec5bc272061435fcd67cf67c4636
         </group>
     </open-files>
 </project-private>
