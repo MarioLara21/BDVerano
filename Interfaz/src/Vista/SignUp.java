@@ -4,14 +4,16 @@
  */
 package Vista;
 
-/**
- *
- * @author josep
- */
+import Modelo.SignUpModel;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 public class SignUp extends javax.swing.JFrame {
 
     /**
-     * Creates new form SignUp
+     * Creates new form SignUpModel
      */
     public SignUp() {
         initComponents();
@@ -97,7 +99,6 @@ public class SignUp extends javax.swing.JFrame {
         jLabel5.setText("Género: ");
         SignUpPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 80, -1));
 
-
         Combo_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
         Combo_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +174,6 @@ public class SignUp extends javax.swing.JFrame {
         jLabel12.setText("Fecha de nacimiento");
         SignUpPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
-
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         SignUpPanel.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 210, 10));
 
@@ -198,6 +198,14 @@ public class SignUp extends javax.swing.JFrame {
         txtAddress.setForeground(new java.awt.Color(153, 153, 153));
         txtAddress.setBorder(null);
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAddressActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 290, 30));
+
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
@@ -298,9 +306,8 @@ public class SignUp extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,6 +406,7 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBox_mesActionPerformed
 
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -413,14 +421,15 @@ public class SignUp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpModel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpModel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpModel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpModel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -435,6 +444,10 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Combo_field;
     private javax.swing.JPanel SignUpPanel;
     private javax.swing.JLabel TextoSignupLabel;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JComboBox<String> comboBox_año;
+    private javax.swing.JComboBox<String> comboBox_dia;
+    private javax.swing.JComboBox<String> comboBox_mes;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

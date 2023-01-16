@@ -3,17 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author maro
  */
 public class Usuarios extends javax.swing.JFrame {
+
     /**
      * Creates new form Usuarios
      */
@@ -30,7 +26,7 @@ public class Usuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelPrincipalUsuarios = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         LabelTitulo = new javax.swing.JLabel();
         PanelTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -54,36 +50,36 @@ public class Usuarios extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
 
-        TablaUsuarios.setAutoCreateRowSorter(true);
-        TablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setAutoCreateColumnsFromModel(false);
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id_RegisteredUser", "Ru_Password", "Ru_Username", "Id_Person", "Id_Audit", "CreationDate", "CreationUser", "LastModificationDate", "LastModificationUser"
+                "Id_Person", "First_Name", "Last_Name", "Date_Of_Birth", "Id_Photo", "Gender", "Id_Address"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, true, true, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        TablaUsuarios.setToolTipText("");
-        TablaUsuarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        TablaUsuarios.setColumnSelectionAllowed(true);
-        TablaUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TablaUsuarios.setName(""); // NOI18N
-        TablaUsuarios.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
-        TablaUsuarios.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        TablaUsuarios.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        TablaUsuarios.setShowGrid(true);
-        TablaUsuarios.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(TablaUsuarios);
-        TablaUsuarios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        jTable1.setName(""); // NOI18N
+        jTable1.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
+        jTable1.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable1.setShowGrid(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout PanelTablaLayout = new javax.swing.GroupLayout(PanelTabla);
         PanelTabla.setLayout(PanelTablaLayout);
@@ -100,7 +96,7 @@ public class Usuarios extends javax.swing.JFrame {
                 .addGap(0, 15, Short.MAX_VALUE))
         );
 
-        PanelPrincipalUsuarios.add(PanelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
+        jPanel1.add(PanelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
 
         btnAddUser.setText("Agregar");
         btnAddUser.addActionListener(new java.awt.event.ActionListener() {
@@ -209,8 +205,6 @@ public class Usuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelTitulo;
-    private javax.swing.JPanel PanelActualizar;
-    private javax.swing.JPanel PanelPrincipalUsuarios;
     private javax.swing.JPanel PanelTabla;
     private javax.swing.JButton btnAddUser;
     private javax.swing.JButton btnVolver1;
@@ -218,5 +212,6 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JButton btnVolver3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
