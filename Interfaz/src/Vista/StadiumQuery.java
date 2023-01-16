@@ -6,14 +6,14 @@ package Vista;
 
 /**
  *
- * @author maro
+ * @author dnlal
  */
-public class Usuarios extends javax.swing.JFrame {
+public class StadiumQuery extends javax.swing.JFrame {
 
     /**
-     * Creates new form Usuarios
+     * Creates new form StadiumQuery
      */
-    public Usuarios() {
+    public StadiumQuery() {
         initComponents();
     }
 
@@ -28,83 +28,30 @@ public class Usuarios extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LabelTitulo = new javax.swing.JLabel();
-        PanelTabla = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btnAddUser = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         btnVolver2 = new javax.swing.JButton();
         btnVolver3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         btnVolver1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelTitulo.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         LabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelTitulo.setText("Usuarios");
+        LabelTitulo.setText("Estadios");
         jPanel1.add(LabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 190, 40));
-        LabelTitulo.getAccessibleContext().setAccessibleDescription("");
 
-        jScrollPane1.setBorder(null);
-
-        jTable1.setAutoCreateColumnsFromModel(false);
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id_Person", "First_Name", "Last_Name", "Date_Of_Birth", "Id_Photo", "Gender", "Id_Address"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setName(""); // NOI18N
-        jTable1.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
-        jTable1.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setShowGrid(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout PanelTablaLayout = new javax.swing.GroupLayout(PanelTabla);
-        PanelTabla.setLayout(PanelTablaLayout);
-        PanelTablaLayout.setHorizontalGroup(
-            PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTablaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE))
-        );
-        PanelTablaLayout.setVerticalGroup(
-            PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTablaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 15, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(PanelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
-
-        btnAddUser.setText("Agregar");
-        btnAddUser.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setText("Agregar");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddUserActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 90, 30));
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 90, 30));
 
         btnVolver2.setText("Modificar");
         btnVolver2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +59,7 @@ public class Usuarios extends javax.swing.JFrame {
                 btnVolver2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 90, 30));
+        jPanel1.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 90, 30));
 
         btnVolver3.setText("Eliminar");
         btnVolver3.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +67,22 @@ public class Usuarios extends javax.swing.JFrame {
                 btnVolver3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 90, 30));
+        jPanel1.add(btnVolver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 90, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 460, 290));
 
         btnVolver1.setText("Volver");
         btnVolver1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,30 +90,31 @@ public class Usuarios extends javax.swing.JFrame {
                 btnVolver1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(btnVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
-        SignUp signUpWindow = new SignUp(); 
-        signUpWindow.setVisible(true); 
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        AddStadiumFrame stadiumFrame = new AddStadiumFrame(); 
+        stadiumFrame.setVisible(true); 
         this.dispose(); 
-    }//GEN-LAST:event_btnAddUserActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnVolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver2ActionPerformed
         // TODO add your handling code here:
@@ -165,7 +128,6 @@ public class Usuarios extends javax.swing.JFrame {
         Admin adminWindow= new Admin();
         adminWindow.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
     /**
@@ -185,28 +147,27 @@ public class Usuarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StadiumQuery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StadiumQuery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StadiumQuery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StadiumQuery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Usuarios().setVisible(true);
+                new StadiumQuery().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelTitulo;
-    private javax.swing.JPanel PanelTabla;
-    private javax.swing.JButton btnAddUser;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JButton btnVolver1;
     private javax.swing.JButton btnVolver2;
     private javax.swing.JButton btnVolver3;

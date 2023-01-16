@@ -4,10 +4,29 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/interfaz/Interfaz.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/EditStateFrame.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/EventQuery.java</file>
             <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Controlador/AdmNews.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/AddStadiumFrame.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/NonAdmin.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/SedeQuery.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/NewsQuery.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/AddPlayer.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/EditCountryFrame.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/Admin.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/Logbook.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/Login.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/NewsQueryRU.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/EditCityFrame.java</file>
             <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Controlador/AdmUsuarios.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/AddNewsFrame.java</file>
             <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Controlador/conexion.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/Usuarios.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/StadiumQuery.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/SedeFrame.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/SignUp.java</file>
             <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Controlador/AgregarAdmin.java</file>
+            <file>file:/C:/Repositorios/BASES2023/BDVerano/Interfaz/src/Vista/PlayerQuery.java</file>
         </group>
     </open-files>
 </project-private>

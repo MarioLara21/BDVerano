@@ -29,19 +29,23 @@ public class EditCountryFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         TextoSignupLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        FirstName_field = new javax.swing.JTextField();
+        txtCountry = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btnAddCountry = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        FirstName_field1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtNewCountry = new javax.swing.JTextField();
+        btnChangeNameCountry = new javax.swing.JButton();
+        btnChangeToState = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         FirstName_field2 = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        jButton4 = new javax.swing.JButton();
+        btnRemoveCiy = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,59 +59,59 @@ public class EditCountryFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
-        FirstName_field.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field.setBorder(null);
-        FirstName_field.addActionListener(new java.awt.event.ActionListener() {
+        txtCountry.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtCountry.setForeground(new java.awt.Color(153, 153, 153));
+        txtCountry.setBorder(null);
+        txtCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_fieldActionPerformed(evt);
+                txtCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(FirstName_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 220, 30));
+        jPanel1.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 220, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 210, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 210, 10));
 
-        jButton1.setText("Agregar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddCountry.setText("Agregar");
+        btnAddCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAddCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 120, 30));
+        jPanel1.add(btnAddCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 120, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Nombre: ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, 30));
 
-        FirstName_field1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        FirstName_field1.setForeground(new java.awt.Color(153, 153, 153));
-        FirstName_field1.setBorder(null);
-        FirstName_field1.addActionListener(new java.awt.event.ActionListener() {
+        txtNewCountry.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtNewCountry.setForeground(new java.awt.Color(153, 153, 153));
+        txtNewCountry.setBorder(null);
+        txtNewCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FirstName_field1ActionPerformed(evt);
+                txtNewCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(FirstName_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 220, 20));
+        jPanel1.add(txtNewCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 220, 30));
 
-        jButton2.setText("Cambiar nombre");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnChangeNameCountry.setText("Cambiar nombre");
+        btnChangeNameCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnChangeNameCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 130, 30));
+        jPanel1.add(btnChangeNameCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 130, 30));
 
-        jButton3.setText("Estado");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnChangeToState.setText("Estado");
+        btnChangeToState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnChangeToStateActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 110, 30));
+        jPanel1.add(btnChangeToState, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 110, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Nuevo nombre:");
@@ -124,63 +128,98 @@ public class EditCountryFrame extends javax.swing.JFrame {
         jPanel1.add(FirstName_field2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 220, 20));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 210, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 220, 10));
 
-        jButton4.setText("Éliminar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRemoveCiy.setText("Eliminar");
+        btnRemoveCiy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRemoveCiyActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 100, 30));
+        jPanel1.add(btnRemoveCiy, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Editar nombre: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        jLabel2.setText("Agregar/Eliminar país: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 270, 370));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("Editar nombre: ");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FirstName_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_fieldActionPerformed
+    private void txtCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_fieldActionPerformed
+    }//GEN-LAST:event_txtCountryActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAddCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAddCountryActionPerformed
 
-    private void FirstName_field1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field1ActionPerformed
+    private void txtNewCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FirstName_field1ActionPerformed
+    }//GEN-LAST:event_txtNewCountryActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnChangeNameCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeNameCountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnChangeNameCountryActionPerformed
 
     private void FirstName_field2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstName_field2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnChangeToStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeToStateActionPerformed
+        EditStateFrame stateFrame = new EditStateFrame(); 
+        stateFrame.setVisible(true); 
+        this.dispose(); 
+    }//GEN-LAST:event_btnChangeToStateActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnRemoveCiyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveCiyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnRemoveCiyActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        Admin adminFrame = new Admin(); 
+        adminFrame.setVisible(true); 
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,21 +258,25 @@ public class EditCountryFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField FirstName_field;
-    private javax.swing.JTextField FirstName_field1;
     private javax.swing.JTextField FirstName_field2;
     private javax.swing.JLabel TextoSignupLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnAddCountry;
+    private javax.swing.JButton btnChangeNameCountry;
+    private javax.swing.JButton btnChangeToState;
+    private javax.swing.JButton btnRemoveCiy;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtCountry;
+    private javax.swing.JTextField txtNewCountry;
     // End of variables declaration//GEN-END:variables
 }

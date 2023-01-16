@@ -117,7 +117,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/8124779.png"))); // NOI18N
-        jLabel8.setText("KMDJR");
+        jLabel8.setText("DR KMJ");
         background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 90));
         background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
@@ -157,7 +157,7 @@ public class Login extends javax.swing.JFrame {
                 Close_btnActionPerformed(evt);
             }
         });
-        background.add(Close_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
+        background.add(Close_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel9.setText("Historias más vistas ");
@@ -167,9 +167,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 107, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,8 +201,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
-       SignUp ventana= new SignUp();
-       ventana.setVisible(true);
+       SignUp ventanaSignUp= new SignUp();
+       ventanaSignUp.setVisible(true);
        this.setVisible(false);
        
     }//GEN-LAST:event_btnRegistroActionPerformed
