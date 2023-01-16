@@ -29,22 +29,15 @@ public class Admin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        btnUserQuery = new javax.swing.JButton();
-        btnNewsQuery = new javax.swing.JButton();
-        btnPlayer = new javax.swing.JButton();
-        btnEvent = new javax.swing.JButton();
-        btnStadium = new javax.swing.JButton();
-        btnSede = new javax.swing.JButton();
-        btnLocation = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
-        btnVolver1 = new javax.swing.JButton();
-        btnLogbook = new javax.swing.JButton();
-        btnEquipo = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        btnAdmin = new javax.swing.JButton();
-        btnTD = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,63 +49,46 @@ public class Admin extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 319, -1));
 
         jButton1.setText("Estadisticas");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 140, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 120, 50));
 
-        btnUserQuery.setText("Usuarios Registrados");
-        btnUserQuery.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Usuarios");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserQueryActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUserQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 150, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 130, 50));
 
-        btnNewsQuery.setText("Noticias");
-        btnNewsQuery.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Noticias");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewsQueryActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNewsQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 140, 30));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 130, 50));
 
-        btnPlayer.setText("Jugadores");
-        btnPlayer.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("Consultas");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 120, 50));
+
+        jButton5.setText("Jugadores");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 160, 50));
+
+        jButton6.setText("Eventos");
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 120, 50));
+
+        jButton7.setText("Estadios");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlayerActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 150, 30));
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 120, 50));
 
-        btnEvent.setText("Eventos");
-        btnEvent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEventActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 150, 30));
+        jButton8.setText("Sede");
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 130, 50));
 
-        btnStadium.setText("Estadios");
-        btnStadium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStadiumActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnStadium, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 150, 30));
-
-        btnSede.setText("Sede");
-        btnSede.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSedeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 150, 30));
-
-        btnLocation.setText("Locación");
-        btnLocation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocationActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 150, 30));
+        jButton9.setText("Logbook");
+        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 130, 50));
 
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -120,152 +96,41 @@ public class Admin extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        btnVolver1.setText("Salir");
-        btnVolver1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolver1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, -1, -1));
-
-        btnLogbook.setText("Logbook");
-        btnLogbook.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogbookActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnLogbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 140, 30));
-
-        btnEquipo.setText("Equipos");
-        btnEquipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEquipoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 150, 30));
-
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel2.setText("Data");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 60, 20));
-
-        btnAdmin.setText("Aministradores");
-        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 150, 30));
-
-        btnTD.setText("Directores Técnicos");
-        btnTD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTDActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnTD, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 150, 30));
-
-        jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel3.setText("Personas");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 80, 20));
-
-        jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabel4.setText("Informacion de eventos");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 170, 20));
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 825, 472);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnUserQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserQueryActionPerformed
-       Usuarios windowUsuarios= new Usuarios();
-       windowUsuarios.setVisible(true);
-       this.setVisible(false);
-    }//GEN-LAST:event_btnUserQueryActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void btnNewsQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewsQueryActionPerformed
-       NewsQuery windowNewsQuery= new NewsQuery();
-       windowNewsQuery.setVisible(true);
-       this.setVisible(false);
-    }//GEN-LAST:event_btnNewsQueryActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btnStadiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStadiumActionPerformed
-        StadiumQuery stadiumQuery= new StadiumQuery();
-        stadiumQuery.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnStadiumActionPerformed
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         Login lgn= new Login();
         lgn.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
-
-    private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        this.dispose(); 
-    }//GEN-LAST:event_btnVolver1ActionPerformed
-
-    private void btnPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayerActionPerformed
-        PlayerQuery playerWindow= new PlayerQuery();
-        playerWindow.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnPlayerActionPerformed
-
-    private void btnEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEventActionPerformed
-        EventQuery eventWindow = new EventQuery(); 
-        eventWindow.setVisible(true); 
-        this.dispose(); 
-    }//GEN-LAST:event_btnEventActionPerformed
-
-    private void btnSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSedeActionPerformed
-        SedeQuery sedeWindow = new SedeQuery(); 
-        sedeWindow.setVisible(true); 
-        this.dispose(); 
-    }//GEN-LAST:event_btnSedeActionPerformed
-
-    private void btnLogbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogbookActionPerformed
-        Logbook logbookWindow = new Logbook(); 
-        logbookWindow.setVisible(true); 
-        this.dispose(); 
-    }//GEN-LAST:event_btnLogbookActionPerformed
-
-    private void btnLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocationActionPerformed
-        EditCountryFrame countryFrame = new EditCountryFrame(); 
-        countryFrame.setVisible(true); 
-        this.dispose(); 
-    }//GEN-LAST:event_btnLocationActionPerformed
-
-    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
-        AdminQuery adminQuery = new AdminQuery(); 
-        adminQuery.setVisible(true); 
-        this.dispose(); 
-    }//GEN-LAST:event_btnAdminActionPerformed
-
-    private void btnTDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTDActionPerformed
-        TechnicalDirectorQuery TDQuery = new TechnicalDirectorQuery(); 
-        TDQuery.setVisible(true); 
-        this.dispose();
-    }//GEN-LAST:event_btnTDActionPerformed
-
-    private void btnEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipoActionPerformed
-        TeamQuery TeamQuery = new TeamQuery(); 
-        TeamQuery.setVisible(true); 
-        this.dispose();
-    }//GEN-LAST:event_btnEquipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,24 +168,17 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdmin;
-    private javax.swing.JButton btnEquipo;
-    private javax.swing.JButton btnEvent;
-    private javax.swing.JButton btnLocation;
-    private javax.swing.JButton btnLogbook;
-    private javax.swing.JButton btnNewsQuery;
-    private javax.swing.JButton btnPlayer;
-    private javax.swing.JButton btnSede;
-    private javax.swing.JButton btnStadium;
-    private javax.swing.JButton btnTD;
-    private javax.swing.JButton btnUserQuery;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton btnVolver1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

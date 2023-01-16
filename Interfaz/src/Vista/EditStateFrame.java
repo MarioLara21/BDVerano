@@ -26,63 +26,63 @@ public class EditStateFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlState = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         TextoSignupLabel = new javax.swing.JLabel();
-        btnRemoveState = new javax.swing.JButton();
-        btnAddState = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        btnChangeToCity = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         txtStateName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtNewStateName = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        btnChangeName = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pnlState.setBackground(new java.awt.Color(255, 255, 255));
-        pnlState.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TextoSignupLabel.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
         TextoSignupLabel.setText("Edición de estado");
-        pnlState.add(TextoSignupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 310, -1));
+        jPanel1.add(TextoSignupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, -1));
 
-        btnRemoveState.setText("Eliminar");
-        btnRemoveState.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveStateActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        pnlState.add(btnRemoveState, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 100, 30));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 100, 30));
 
-        btnAddState.setText("Agregar");
-        btnAddState.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Agregar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddStateActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        pnlState.add(btnAddState, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 120, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 120, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        pnlState.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 210, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 210, 10));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Nombre: ");
-        pnlState.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 30));
 
-        btnChangeToCity.setText("Ciudad");
-        btnChangeToCity.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Ciudad");
+        jButton3.setActionCommand("Ciudad");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChangeToCityActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        pnlState.add(btnChangeToCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 110, 30));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 110, 30));
 
         txtStateName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtStateName.setForeground(new java.awt.Color(153, 153, 153));
@@ -92,15 +92,15 @@ public class EditStateFrame extends javax.swing.JFrame {
                 txtStateNameActionPerformed(evt);
             }
         });
-        pnlState.add(txtStateName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 220, 30));
+        jPanel1.add(txtStateName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 220, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Agregar/Eliminar estado:");
-        pnlState.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Nuevo nombre:");
-        pnlState.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, 30));
 
         txtNewStateName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtNewStateName.setForeground(new java.awt.Color(153, 153, 153));
@@ -110,18 +110,18 @@ public class EditStateFrame extends javax.swing.JFrame {
                 txtNewStateNameActionPerformed(evt);
             }
         });
-        pnlState.add(txtNewStateName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 250, 30));
+        jPanel1.add(txtNewStateName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 220, 30));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        pnlState.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 240, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 210, 10));
 
-        btnChangeName.setText("Cambiar nombre");
-        btnChangeName.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Cambiar nombre");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChangeNameActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        pnlState.add(btnChangeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 130, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 130, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,51 +136,41 @@ public class EditStateFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        pnlState.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 270, 350));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 250, 350));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Editar nombre: ");
-        pnlState.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
-
-        btnVolver.setText("Volver");
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
-            }
-        });
-        pnlState.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlState, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlState, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRemoveStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveStateActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoveStateActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void btnAddStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStateActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddStateActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnChangeToCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeToCityActionPerformed
-        EditCityFrame cityFrame = new EditCityFrame(); 
-        cityFrame.setVisible(true); 
-        this.dispose();
-    }//GEN-LAST:event_btnChangeToCityActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txtStateNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStateNameActionPerformed
         // TODO add your handling code here:
@@ -190,15 +180,9 @@ public class EditStateFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNewStateNameActionPerformed
 
-    private void btnChangeNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeNameActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnChangeNameActionPerformed
-
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        EditCountryFrame countryFrame = new EditCountryFrame();
-        countryFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnVolverActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,20 +221,19 @@ public class EditStateFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TextoSignupLabel;
-    private javax.swing.JButton btnAddState;
-    private javax.swing.JButton btnChangeName;
-    private javax.swing.JButton btnChangeToCity;
-    private javax.swing.JButton btnRemoveState;
-    private javax.swing.JButton btnVolver;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JPanel pnlState;
     private javax.swing.JTextField txtNewStateName;
     private javax.swing.JTextField txtStateName;
     // End of variables declaration//GEN-END:variables

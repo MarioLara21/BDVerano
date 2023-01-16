@@ -31,21 +31,27 @@ public class Usuarios extends javax.swing.JFrame {
         PanelTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btnAddUser = new javax.swing.JButton();
-        btnVolver2 = new javax.swing.JButton();
-        btnVolver3 = new javax.swing.JButton();
-        btnVolver1 = new javax.swing.JButton();
+        BotonInsertar = new javax.swing.JPanel();
+        LabelInsertar = new javax.swing.JLabel();
+        BotonModificar = new javax.swing.JPanel();
+        LabelModificar = new javax.swing.JLabel();
+        BotonCerrar = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        BotonConsultar = new javax.swing.JPanel();
+        LabelConsultar = new javax.swing.JLabel();
+        BotonEliminar = new javax.swing.JPanel();
+        LabelEliminar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelTitulo.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
+        LabelTitulo.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
         LabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelTitulo.setText("Usuarios");
-        jPanel1.add(LabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 190, 40));
+        jPanel1.add(LabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 120, 40));
         LabelTitulo.getAccessibleContext().setAccessibleDescription("");
 
         jScrollPane1.setBorder(null);
@@ -85,88 +91,131 @@ public class Usuarios extends javax.swing.JFrame {
         PanelTabla.setLayout(PanelTablaLayout);
         PanelTablaLayout.setHorizontalGroup(
             PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTablaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
         );
         PanelTablaLayout.setVerticalGroup(
             PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTablaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(PanelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
 
-        btnAddUser.setText("Agregar");
-        btnAddUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddUserActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAddUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 90, 30));
+        BotonInsertar.setBackground(new java.awt.Color(204, 255, 255));
+        BotonInsertar.setToolTipText("");
 
-        btnVolver2.setText("Modificar");
-        btnVolver2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolver2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 90, 30));
+        LabelInsertar.setBackground(new java.awt.Color(204, 204, 255));
+        LabelInsertar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelInsertar.setLabelFor(BotonInsertar);
+        LabelInsertar.setText("Insertar");
+        LabelInsertar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        btnVolver3.setText("Eliminar");
-        btnVolver3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolver3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVolver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 90, 30));
+        javax.swing.GroupLayout BotonInsertarLayout = new javax.swing.GroupLayout(BotonInsertar);
+        BotonInsertar.setLayout(BotonInsertarLayout);
+        BotonInsertarLayout.setHorizontalGroup(
+            BotonInsertarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelInsertar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        BotonInsertarLayout.setVerticalGroup(
+            BotonInsertarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelInsertar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
 
-        btnVolver1.setText("Volver");
-        btnVolver1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolver1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(BotonInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 70, 30));
+
+        BotonModificar.setBackground(new java.awt.Color(204, 255, 255));
+
+        LabelModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelModificar.setLabelFor(BotonModificar);
+        LabelModificar.setText("Modificar");
+        LabelModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout BotonModificarLayout = new javax.swing.GroupLayout(BotonModificar);
+        BotonModificar.setLayout(BotonModificarLayout);
+        BotonModificarLayout.setHorizontalGroup(
+            BotonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        BotonModificarLayout.setVerticalGroup(
+            BotonModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, -1, -1));
+
+        BotonCerrar.setBackground(new java.awt.Color(153, 204, 255));
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("<--");
+        jLabel1.setToolTipText("");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout BotonCerrarLayout = new javax.swing.GroupLayout(BotonCerrar);
+        BotonCerrar.setLayout(BotonCerrarLayout);
+        BotonCerrarLayout.setHorizontalGroup(
+            BotonCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        BotonCerrarLayout.setVerticalGroup(
+            BotonCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BotonCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, -1));
+
+        BotonConsultar.setBackground(new java.awt.Color(204, 255, 255));
+
+        LabelConsultar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelConsultar.setLabelFor(BotonConsultar);
+        LabelConsultar.setText("Consultar");
+
+        javax.swing.GroupLayout BotonConsultarLayout = new javax.swing.GroupLayout(BotonConsultar);
+        BotonConsultar.setLayout(BotonConsultarLayout);
+        BotonConsultarLayout.setHorizontalGroup(
+            BotonConsultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        BotonConsultarLayout.setVerticalGroup(
+            BotonConsultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BotonConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+
+        BotonEliminar.setBackground(new java.awt.Color(204, 255, 255));
+
+        LabelEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelEliminar.setLabelFor(BotonEliminar);
+        LabelEliminar.setText("Eliminar");
+
+        javax.swing.GroupLayout BotonEliminarLayout = new javax.swing.GroupLayout(BotonEliminar);
+        BotonEliminar.setLayout(BotonEliminarLayout);
+        BotonEliminarLayout.setHorizontalGroup(
+            BotonEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        BotonEliminarLayout.setVerticalGroup(
+            BotonEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 70, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
-        SignUp signUpWindow = new SignUp(); 
-        signUpWindow.setVisible(true); 
-        this.dispose(); 
-    }//GEN-LAST:event_btnAddUserActionPerformed
-
-    private void btnVolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVolver2ActionPerformed
-
-    private void btnVolver3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVolver3ActionPerformed
-
-    private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        Admin adminWindow= new Admin();
-        adminWindow.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_btnVolver1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,12 +253,18 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BotonCerrar;
+    private javax.swing.JPanel BotonConsultar;
+    private javax.swing.JPanel BotonEliminar;
+    private javax.swing.JPanel BotonInsertar;
+    private javax.swing.JPanel BotonModificar;
+    private javax.swing.JLabel LabelConsultar;
+    private javax.swing.JLabel LabelEliminar;
+    private javax.swing.JLabel LabelInsertar;
+    private javax.swing.JLabel LabelModificar;
     private javax.swing.JLabel LabelTitulo;
     private javax.swing.JPanel PanelTabla;
-    private javax.swing.JButton btnAddUser;
-    private javax.swing.JButton btnVolver1;
-    private javax.swing.JButton btnVolver2;
-    private javax.swing.JButton btnVolver3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
