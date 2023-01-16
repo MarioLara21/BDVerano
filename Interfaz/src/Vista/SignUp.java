@@ -51,6 +51,22 @@ public class SignUp extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         FirstName_field5 = new javax.swing.JTextField();
+        btnVolver = new javax.swing.JButton();
+        signUp_btn = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        comboBox_año = new javax.swing.JComboBox<>();
+        comboBox_dia = new javax.swing.JComboBox<>();
+        comboBox_mes = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        signUp_btn1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        FirstName_field1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        LastName_field1 = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,7 +77,7 @@ public class SignUp extends javax.swing.JFrame {
 
         TextoSignupLabel.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
         TextoSignupLabel.setText("Registro de usuario: ");
-        SignUpPanel.add(TextoSignupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, -1));
+        SignUpPanel.add(TextoSignupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 360, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Nombre: ");
@@ -80,7 +96,8 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Género: ");
-        SignUpPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 80, -1));
+        SignUpPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 80, -1));
+
 
         Combo_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
         Combo_field.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +105,7 @@ public class SignUp extends javax.swing.JFrame {
                 Combo_fieldActionPerformed(evt);
             }
         });
-        SignUpPanel.add(Combo_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 90, 30));
+        SignUpPanel.add(Combo_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("País:");
@@ -151,8 +168,9 @@ public class SignUp extends javax.swing.JFrame {
         SignUpPanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 210, 10));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel12.setText("Dirección de correo: ");
-        SignUpPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        jLabel12.setText("Fecha de nacimiento");
+        SignUpPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         SignUpPanel.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 210, 10));
@@ -169,7 +187,7 @@ public class SignUp extends javax.swing.JFrame {
         SignUpPanel.add(FirstName_field4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, 20));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel13.setText("Dirección de correo: ");
+        jLabel13.setText("Dirección de exacta: ");
         SignUpPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
@@ -184,7 +202,99 @@ public class SignUp extends javax.swing.JFrame {
                 FirstName_field5ActionPerformed(evt);
             }
         });
-        SignUpPanel.add(FirstName_field5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 220, 20));
+        SignUpPanel.add(FirstName_field5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 220, 20));
+
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        signUp_btn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        signUp_btn.setText("Sign Up");
+        signUp_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUp_btnActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(signUp_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 530, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel14.setText("Dirección de correo: ");
+        SignUpPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+
+        comboBox_año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SignUpPanel.add(comboBox_año, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
+
+        comboBox_dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBox_dia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBox_diaItemStateChanged(evt);
+            }
+        });
+        comboBox_dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBox_diaActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(comboBox_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+
+        comboBox_mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SignUpPanel.add(comboBox_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, -1, -1));
+
+        jLabel2.setText("Año");
+        SignUpPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, -1, -1));
+
+        jLabel3.setText("Día");
+        SignUpPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
+
+        jLabel4.setText("Mes");
+        SignUpPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, -1, -1));
+
+        signUp_btn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        signUp_btn1.setText("Sign Up");
+        signUp_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUp_btn1ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(signUp_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 780, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel15.setText("Contraseña:");
+        SignUpPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, -1));
+
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 210, 10));
+
+        FirstName_field1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        FirstName_field1.setForeground(new java.awt.Color(153, 153, 153));
+        FirstName_field1.setBorder(null);
+        FirstName_field1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstName_field1ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(FirstName_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 220, 20));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setText("Usuario:");
+        SignUpPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, -1, -1));
+
+        LastName_field1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        LastName_field1.setForeground(new java.awt.Color(153, 153, 153));
+        LastName_field1.setBorder(null);
+        LastName_field1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LastName_field1ActionPerformed(evt);
+            }
+        });
+        SignUpPanel.add(LastName_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 220, 20));
+
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        SignUpPanel.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 210, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,9 +307,9 @@ public class SignUp extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 276, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(SignUpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -229,9 +339,61 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstName_field5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        Login ln= new Login();
+        ln.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void signUp_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_btnActionPerformed
+       
+        try {
+            boolean flag;
+            flag= SignUpModel.Register(FirstName_field.getText(), LastName_field.getText());
+            if (flag==true){
+                JOptionPane.showMessageDialog(rootPane, "Se inserto");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "No se inserto");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                        
+                  
+        
+        
+    }//GEN-LAST:event_signUp_btnActionPerformed
+
+    private void comboBox_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBox_diaActionPerformed
+       
+        
+    }//GEN-LAST:event_comboBox_diaActionPerformed
+
+    private void comboBox_diaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBox_diaItemStateChanged
+        String[] dir = new String[31];
+
+        for(int i = 0; i < dir.length; i++) { dir[i] = Integer.toString(i);}
+        comboBox_dia.setModel(new DefaultComboBoxModel<>(dir));
+        comboBox_dia.setVisible(true);
+        
+        
+        comboBox_dia.setModel(new DefaultComboBoxModel<>(dir));
+    }//GEN-LAST:event_comboBox_diaItemStateChanged
+
+    private void signUp_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signUp_btn1ActionPerformed
+
+    private void FirstName_field1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstName_field1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstName_field1ActionPerformed
+
+    private void LastName_field1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastName_field1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LastName_field1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -271,6 +433,8 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JTextField FirstName_field2;
     private javax.swing.JTextField FirstName_field4;
     private javax.swing.JTextField FirstName_field5;
+    private javax.swing.JTextField LastName_field;
+    private javax.swing.JTextField LastName_field1;
     private javax.swing.JPanel SignUpPanel;
     private javax.swing.JLabel TextoSignupLabel;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -281,14 +445,25 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JButton signUp_btn;
+    private javax.swing.JButton signUp_btn1;
+
     // End of variables declaration//GEN-END:variables
 }
