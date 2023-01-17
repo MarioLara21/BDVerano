@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author maro
@@ -14,6 +20,7 @@ public class Usuarios extends javax.swing.JFrame {
      * Creates new form Usuarios
      */
     public Usuarios() {
+        
         initComponents();
     }
 
@@ -28,13 +35,13 @@ public class Usuarios extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LabelTitulo = new javax.swing.JLabel();
-        PanelTabla = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         btnAddUser = new javax.swing.JButton();
         btnVolver2 = new javax.swing.JButton();
         btnVolver3 = new javax.swing.JButton();
         btnVolver1 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TablaUsuarios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,63 +55,13 @@ public class Usuarios extends javax.swing.JFrame {
         jPanel1.add(LabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 190, 40));
         LabelTitulo.getAccessibleContext().setAccessibleDescription("");
 
-        jScrollPane1.setBorder(null);
-
-        jTable1.setAutoCreateColumnsFromModel(false);
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id_Person", "First_Name", "Last_Name", "Date_Of_Birth", "Id_Photo", "Gender", "Id_Address"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setName(""); // NOI18N
-        jTable1.setSelectionBackground(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon[filled].pressedSelectedBackground"));
-        jTable1.setSelectionForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setShowGrid(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout PanelTablaLayout = new javax.swing.GroupLayout(PanelTabla);
-        PanelTabla.setLayout(PanelTablaLayout);
-        PanelTablaLayout.setHorizontalGroup(
-            PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTablaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE))
-        );
-        PanelTablaLayout.setVerticalGroup(
-            PanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTablaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 15, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(PanelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 330));
-
         btnAddUser.setText("Agregar");
         btnAddUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddUserActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 90, 30));
+        jPanel1.add(btnAddUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 90, 30));
 
         btnVolver2.setText("Modificar");
         btnVolver2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +69,7 @@ public class Usuarios extends javax.swing.JFrame {
                 btnVolver2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 90, 30));
+        jPanel1.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 90, 30));
 
         btnVolver3.setText("Eliminar");
         btnVolver3.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +77,7 @@ public class Usuarios extends javax.swing.JFrame {
                 btnVolver3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 90, 30));
+        jPanel1.add(btnVolver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 90, 30));
 
         btnVolver1.setText("Volver");
         btnVolver1.addActionListener(new java.awt.event.ActionListener() {
@@ -130,11 +87,41 @@ public class Usuarios extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 100, 30));
+
+        TablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Contraseña", "Usuario", "Id_person", "Fecha creación", "Usuario creación", "Ultima modificación", "Ultimo usuario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(TablaUsuarios);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 600, 310));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,6 +154,41 @@ public class Usuarios extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_btnVolver1ActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        Connection connection = null;
+        try{
+        //Se conecta a la base de datos
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:BASES2022";
+        String username = "pr";
+        String password = "pr";
+        connection = DriverManager.getConnection(dbURL,username, password);
+        Statement st = connection.createStatement();
+        String sql = "Select * from RegisteredUser"; //Query para traer datos
+        ResultSet rs = st.executeQuery(sql);
+        while(rs.next()){
+            //Se agregan los campos de la tabla como variables
+            String id_RU = String.valueOf(rs.getInt("ID_REGISTEREDUSER"));
+            String ru_Password = rs.getString("RU_PASSWORD");
+            String ru_UserName = rs.getString("RU_USERNAME");
+            String id_Person = String.valueOf(rs.getInt("ID_PERSON"));
+            String creationDate = String.valueOf(rs.getDate("CREATIONDATE"));
+            String creationUser = rs.getString("CREATIONUSER");
+            String lastModDate = String.valueOf(rs.getDate("LASTMODIFICATIONDATE"));
+            String lastModUser = rs.getString("LASTMODIFICATIONUSER");
+            
+            String tbData[] = {id_RU,ru_Password,ru_UserName,id_Person,
+            creationDate, creationUser, lastModDate, lastModUser }; //Ingreso las variables que tienen los datos
+            DefaultTableModel tbModel = (DefaultTableModel)TablaUsuarios.getModel();
+            
+            tbModel.addRow(tbData); //Agrega una fila a la tabla
+            }
+        }
+     catch (ClassNotFoundException | SQLException e){
+         System.out.println(e.getMessage());
+     }
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,13 +227,13 @@ public class Usuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelTitulo;
-    private javax.swing.JPanel PanelTabla;
+    private javax.swing.JTable TablaUsuarios;
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAddUser;
     private javax.swing.JButton btnVolver1;
     private javax.swing.JButton btnVolver2;
     private javax.swing.JButton btnVolver3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

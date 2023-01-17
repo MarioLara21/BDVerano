@@ -184,7 +184,7 @@ public class Login extends javax.swing.JFrame {
         try {
             boolean flag_temp;
             flag_temp = LoginModelo.Login(inputUser.getText(), inputPassword.getText());
-            
+         
             if(flag_temp==true){
                 Admin adm=new Admin();
                 adm.setVisible(true);

@@ -33,7 +33,7 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtFistName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Combo_field = new javax.swing.JComboBox<>();
+        comboBox_gender = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
@@ -99,13 +99,13 @@ public class SignUp extends javax.swing.JFrame {
         jLabel5.setText("Género: ");
         SignUpPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 80, -1));
 
-        Combo_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
-        Combo_field.addActionListener(new java.awt.event.ActionListener() {
+        comboBox_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Otro", " ", " " }));
+        comboBox_gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Combo_fieldActionPerformed(evt);
+                comboBox_genderActionPerformed(evt);
             }
         });
-        SignUpPanel.add(Combo_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 90, 30));
+        SignUpPanel.add(comboBox_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("País:");
@@ -225,10 +225,10 @@ public class SignUp extends javax.swing.JFrame {
         jLabel14.setText("Dirección de correo: ");
         SignUpPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
-        comboBox_año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBox_año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", " " }));
         SignUpPanel.add(comboBox_año, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
 
-        comboBox_dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBox_dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         comboBox_dia.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboBox_diaItemStateChanged(evt);
@@ -241,7 +241,7 @@ public class SignUp extends javax.swing.JFrame {
         });
         SignUpPanel.add(comboBox_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        comboBox_mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBox_mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", " " }));
         comboBox_mes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBox_mesActionPerformed(evt);
@@ -319,9 +319,9 @@ public class SignUp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Combo_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Combo_fieldActionPerformed
+    private void comboBox_genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBox_genderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Combo_fieldActionPerformed
+    }//GEN-LAST:event_comboBox_genderActionPerformed
 
     private void txtFistNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFistNameActionPerformed
         // TODO add your handling code here:
@@ -354,7 +354,11 @@ public class SignUp extends javax.swing.JFrame {
        
         try {
             boolean flag;
-            flag= SignUpModel.Register(txtFistName.getText(), txtLastName.getText());
+            String date = comboBox_dia.getSelectedItem().toString()+"-"+comboBox_mes.getSelectedItem().toString()
+                    +"-"+comboBox_año.getSelectedItem().toString();
+            int phoneNum = Integer.parseInt(txtPhone.getText());
+            flag= SignUpModel.Register(txtFistName.getText(), txtLastName.getText(),date, 1, txtEmail.getText(),comboBox_gender.getSelectedItem().toString(),
+                    phoneNum,1,2,3,txtAddress.getText(), txtUser.getText(), txtPassword.getText());
             if (flag==true){
                 JOptionPane.showMessageDialog(rootPane, "Se inserto");
             }
@@ -376,14 +380,7 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_comboBox_diaActionPerformed
 
     private void comboBox_diaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBox_diaItemStateChanged
-        String[] dir = new String[31];
-
-        for(int i = 0; i < dir.length; i++) { dir[i] = Integer.toString(i);}
-        comboBox_dia.setModel(new DefaultComboBoxModel<>(dir));
-        comboBox_dia.setVisible(true);
-        
-        
-        comboBox_dia.setModel(new DefaultComboBoxModel<>(dir));
+       
     }//GEN-LAST:event_comboBox_diaItemStateChanged
 
     private void signUp_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_btn1ActionPerformed
@@ -441,12 +438,12 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Combo_field;
     private javax.swing.JPanel SignUpPanel;
     private javax.swing.JLabel TextoSignupLabel;
     private javax.swing.JButton btnVolver;
     private javax.swing.JComboBox<String> comboBox_año;
     private javax.swing.JComboBox<String> comboBox_dia;
+    private javax.swing.JComboBox<String> comboBox_gender;
     private javax.swing.JComboBox<String> comboBox_mes;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;

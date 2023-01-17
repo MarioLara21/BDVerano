@@ -4,6 +4,13 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author dnlal
@@ -29,11 +36,12 @@ public class AdminQuery extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnVolver3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaAdmin = new javax.swing.JTable();
         btnVolver2 = new javax.swing.JButton();
         btnAddAdmin = new javax.swing.JButton();
         LabelTitulo = new javax.swing.JLabel();
         btnVolver1 = new javax.swing.JButton();
+        btnActualizarAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,20 +56,25 @@ public class AdminQuery extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 90, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "ID Usuario Registrado", "ID Parameter", "ID Persona", "Fecha Creación", "Usuario Creación", "Última Fecha Modificación", "Último Usuario Modificación"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 490, 360));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TablaAdmin);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 490, 340));
 
         btnVolver2.setText("Modificar");
         btnVolver2.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +104,14 @@ public class AdminQuery extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnActualizarAdmin.setText("Actualizar");
+        btnActualizarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarAdminActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizarAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 90, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +146,41 @@ public class AdminQuery extends javax.swing.JFrame {
         adminWindow.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolver1ActionPerformed
+
+    private void btnActualizarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarAdminActionPerformed
+        Connection connection = null;
+        try{
+        //Se conecta a la base de datos
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:BASES2022";
+        String username = "pr";
+        String password = "pr";
+        connection = DriverManager.getConnection(dbURL,username, password);
+        Statement st = connection.createStatement();
+        String sql = "Select * from AdministratorPR"; //Query para traer datos
+        ResultSet rs = st.executeQuery(sql);
+        while(rs.next()){
+            //Se agregan los campos de la tabla como variables
+            String id_Admin = String.valueOf(rs.getInt("ID_ADMIN"));
+            String id_RegisteredUser = String.valueOf(rs.getInt("ID_REGISTEREDUSER"));
+            String id_Parameter = String.valueOf(rs.getInt("ID_PARAMETER"));
+            String id_Person = String.valueOf(rs.getInt("ID_PERSON"));
+            String creationDate = String.valueOf(rs.getDate("CREATIONDATE"));
+            String creationUser = rs.getString("CREATIONUSER");
+            String lastModDate = String.valueOf(rs.getDate("LASTMODIFICATIONDATE"));
+            String lastModUser = rs.getString("LASTMODIFICATIONUSER");
+            
+            String tbData[] = { id_Admin, id_RegisteredUser, id_Parameter, id_Person,
+            creationDate, creationUser, lastModDate, lastModUser}; //Ingreso las variables que tienen los datos
+            DefaultTableModel tbModel = (DefaultTableModel)TablaAdmin.getModel();
+            
+            tbModel.addRow(tbData); //Agrega una fila a la tabla
+            }
+        }
+        catch (ClassNotFoundException | SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnActualizarAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,12 +219,13 @@ public class AdminQuery extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelTitulo;
+    private javax.swing.JTable TablaAdmin;
+    private javax.swing.JButton btnActualizarAdmin;
     private javax.swing.JButton btnAddAdmin;
     private javax.swing.JButton btnVolver1;
     private javax.swing.JButton btnVolver2;
     private javax.swing.JButton btnVolver3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

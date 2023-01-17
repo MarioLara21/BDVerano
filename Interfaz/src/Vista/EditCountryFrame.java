@@ -4,6 +4,13 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author dnlal
@@ -43,9 +50,10 @@ public class EditCountryFrame extends javax.swing.JFrame {
         btnRemoveCiy = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablePais = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
+        btnActualizarPais = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,20 +150,25 @@ public class EditCountryFrame extends javax.swing.JFrame {
         jLabel2.setText("Agregar/Eliminar país: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablePais.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Fecha Creación", "Creación Usuario", "Última Fecha Modificación", "Último Usuario Modificación"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 270, 370));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TablePais);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 290, 370));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Editar nombre: ");
@@ -168,6 +181,14 @@ public class EditCountryFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnActualizarPais.setText("Actualizar");
+        btnActualizarPais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarPaisActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizarPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 110, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,6 +242,40 @@ public class EditCountryFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    private void btnActualizarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarPaisActionPerformed
+        Connection connection = null;
+        try{
+        //Se conecta a la base de datos
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:BASES2022";
+        String username = "pr";
+        String password = "pr";
+        connection = DriverManager.getConnection(dbURL,username, password);
+        Statement st = connection.createStatement();
+        String sql = "Select * from COUNTRY"; //Query para traer datos
+        ResultSet rs = st.executeQuery(sql);
+        while(rs.next()){
+            //Se agregan los campos de la tabla como variables
+            String id_Country = String.valueOf(rs.getInt("ID_COUNTRY"));
+            String name_Country = rs.getString("NAME_COUNTRY");
+            String creationDate = String.valueOf(rs.getDate("CREATIONDATE"));
+            String creationUser = rs.getString("CREATIONUSER");
+            String lastModDate = String.valueOf(rs.getDate("LASTMODIFICATIONDATE"));
+            String lastModUser = rs.getString("LASTMODIFICATIONUSER");
+            
+            String tbData[] = {id_Country,name_Country,creationDate,
+                creationUser,lastModDate,lastModUser}; //Ingreso las variables que tienen los datos
+            DefaultTableModel tbModel = (DefaultTableModel)TablePais.getModel();
+            
+            tbModel.addRow(tbData); //Agrega una fila a la tabla
+            }
+        }
+        catch (ClassNotFoundException | SQLException e){
+            System.out.println(e.getMessage());
+        }
+  
+    }//GEN-LAST:event_btnActualizarPaisActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -259,7 +314,9 @@ public class EditCountryFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FirstName_field2;
+    private javax.swing.JTable TablePais;
     private javax.swing.JLabel TextoSignupLabel;
+    private javax.swing.JButton btnActualizarPais;
     private javax.swing.JButton btnAddCountry;
     private javax.swing.JButton btnChangeNameCountry;
     private javax.swing.JButton btnChangeToState;
@@ -275,7 +332,6 @@ public class EditCountryFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtCountry;
     private javax.swing.JTextField txtNewCountry;
     // End of variables declaration//GEN-END:variables

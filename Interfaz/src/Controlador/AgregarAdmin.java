@@ -20,9 +20,9 @@ public class AgregarAdmin {
         try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
         
-        String dbURL = "jdbc:oracle:thin:@localhost:1521:DBPRUEBA";
-        String username = "ge";
-        String password = "ge";
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:BASES2022";
+        String username = "pr";
+        String password = "pr";
         connection = DriverManager.getConnection(dbURL,username, password);
         
         System.out.println("Enter choice");

@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author dnlal
@@ -43,8 +49,9 @@ public class EditCityFrame extends javax.swing.JFrame {
         btnRemoveCity = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaCiudad = new javax.swing.JTable();
         btnVolver = new javax.swing.JButton();
+        btnActualizarCiudad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,7 +142,7 @@ public class EditCityFrame extends javax.swing.JFrame {
         jLabel2.setText("Editar nombre: ");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaCiudad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -146,7 +153,7 @@ public class EditCityFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaCiudad);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 280, 380));
 
@@ -158,13 +165,21 @@ public class EditCityFrame extends javax.swing.JFrame {
         });
         jPanel2.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        btnActualizarCiudad.setText("Actualizar");
+        btnActualizarCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarCiudadActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnActualizarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 110, 30));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 44, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,6 +234,40 @@ public class EditCityFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    private void btnActualizarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarCiudadActionPerformed
+        Connection connection = null;
+        try{
+        //Se conecta a la base de datos
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String dbURL = "jdbc:oracle:thin:@localhost:1521:DBPRUEBA";
+        String username = "pr";
+        String password = "pr";
+        connection = DriverManager.getConnection(dbURL,username, password);
+        Statement st = connection.createStatement();
+        String sql = "Select * from CITY"; //Query para traer datos
+        ResultSet rs = st.executeQuery(sql);
+        while(rs.next()){
+            //Se agregan los campos de la tabla como variables
+            String id_City = String.valueOf(rs.getInt("ID_CITY"));
+            String id_State = String.valueOf(rs.getInt("ID_STATE"));
+            String name_City = rs.getString("NAME_CITY");
+            String creationDate = String.valueOf(rs.getDate("CREATIONDATE"));
+            String creationUser = rs.getString("CREATIONUSER");
+            String lastModDate = String.valueOf(rs.getDate("LASTMODIFICATIONDATE"));
+            String lastModUser = rs.getString("LASTMODIFICATIONUSER");
+            
+            String tbData[] = {id_City,id_State,name_City,creationDate,
+                creationUser,lastModDate,lastModUser}; //Ingreso las variables que tienen los datos
+            DefaultTableModel tbModel = (DefaultTableModel)TablaCiudad.getModel();
+            
+            tbModel.addRow(tbData); //Agrega una fila a la tabla
+            }
+        }
+        catch (ClassNotFoundException | SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnActualizarCiudadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,7 +305,9 @@ public class EditCityFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FirstName_field2;
+    private javax.swing.JTable TablaCiudad;
     private javax.swing.JLabel TextoSignupLabel;
+    private javax.swing.JButton btnActualizarCiudad;
     private javax.swing.JButton btnAddCity;
     private javax.swing.JButton btnChangeNameCity;
     private javax.swing.JButton btnRemoveCity;
@@ -271,7 +322,6 @@ public class EditCityFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtCityName;
     private javax.swing.JTextField txtNewCityName;
     // End of variables declaration//GEN-END:variables
