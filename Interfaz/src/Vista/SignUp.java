@@ -358,7 +358,7 @@ public class SignUp extends javax.swing.JFrame {
                     +"-"+comboBox_año.getSelectedItem().toString();
             int phoneNum = Integer.parseInt(txtPhone.getText());
             flag= SignUpModel.Register(txtFistName.getText(), txtLastName.getText(),date, 1, txtEmail.getText(),comboBox_gender.getSelectedItem().toString(),
-                    phoneNum,1,2,3,txtAddress.getText(), txtUser.getText(), txtPassword.getText());
+                    phoneNum,1,1,1,txtAddress.getText(), txtUser.getText(), txtPassword.getText());
             if (flag==true){
                 JOptionPane.showMessageDialog(rootPane, "Se inserto");
             }

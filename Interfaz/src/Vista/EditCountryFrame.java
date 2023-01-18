@@ -4,11 +4,16 @@
  */
 package Vista;
 
+import Modelo.PaisModelo;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
 import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -47,7 +52,7 @@ public class EditCountryFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         FirstName_field2 = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        btnRemoveCiy = new javax.swing.JButton();
+        btnRemoveCountry = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablePais = new javax.swing.JTable();
@@ -75,10 +80,10 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 txtCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 220, 30));
+        jPanel1.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 220, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 210, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 210, 10));
 
         btnAddCountry.setText("Agregar");
         btnAddCountry.addActionListener(new java.awt.event.ActionListener() {
@@ -86,14 +91,14 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 btnAddCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 120, 30));
+        jPanel1.add(btnAddCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 120, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Nombre: ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, -1, 30));
 
         txtNewCountry.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtNewCountry.setForeground(new java.awt.Color(153, 153, 153));
@@ -103,7 +108,7 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 txtNewCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNewCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 220, 30));
+        jPanel1.add(txtNewCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, 220, 30));
 
         btnChangeNameCountry.setText("Cambiar nombre");
         btnChangeNameCountry.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +116,7 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 btnChangeNameCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnChangeNameCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 130, 30));
+        jPanel1.add(btnChangeNameCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 400, 130, 30));
 
         btnChangeToState.setText("Estado");
         btnChangeToState.addActionListener(new java.awt.event.ActionListener() {
@@ -119,11 +124,11 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 btnChangeToStateActionPerformed(evt);
             }
         });
-        jPanel1.add(btnChangeToState, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 110, 30));
+        jPanel1.add(btnChangeToState, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 110, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Nuevo nombre:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 30));
 
         FirstName_field2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         FirstName_field2.setForeground(new java.awt.Color(153, 153, 153));
@@ -133,22 +138,22 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 FirstName_field2ActionPerformed(evt);
             }
         });
-        jPanel1.add(FirstName_field2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 220, 20));
+        jPanel1.add(FirstName_field2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 220, 20));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 220, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 220, 10));
 
-        btnRemoveCiy.setText("Eliminar");
-        btnRemoveCiy.addActionListener(new java.awt.event.ActionListener() {
+        btnRemoveCountry.setText("Eliminar");
+        btnRemoveCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveCiyActionPerformed(evt);
+                btnRemoveCountryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRemoveCiy, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 100, 30));
+        jPanel1.add(btnRemoveCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Agregar/Eliminar país: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, -1, -1));
 
         TablePais.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,13 +171,18 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        TablePais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablePaisMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablePais);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 290, 370));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 510, 370));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Editar nombre: ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, -1, -1));
 
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -188,15 +198,15 @@ public class EditCountryFrame extends javax.swing.JFrame {
                 btnActualizarPaisActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizarPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 110, 30));
+        jPanel1.add(btnActualizarPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 410, 110, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 961, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +221,20 @@ public class EditCountryFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCountryActionPerformed
 
     private void btnAddCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCountryActionPerformed
-        // TODO add your handling code here:
+        try {
+            boolean flag;
+           
+            flag= PaisModelo.Register(txtCountry.getText());
+            if (flag==true){
+                JOptionPane.showMessageDialog(rootPane, "Se insertó");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "No se insertó");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+           JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
+       
     }//GEN-LAST:event_btnAddCountryActionPerformed
 
     private void txtNewCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCountryActionPerformed
@@ -232,9 +255,21 @@ public class EditCountryFrame extends javax.swing.JFrame {
         this.dispose(); 
     }//GEN-LAST:event_btnChangeToStateActionPerformed
 
-    private void btnRemoveCiyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveCiyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoveCiyActionPerformed
+    private void btnRemoveCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveCountryActionPerformed
+        try {
+            boolean flag;
+           
+            flag= PaisModelo.RemoveCountry(txtCountry.getText());
+            if (flag==true){
+                JOptionPane.showMessageDialog(rootPane, "Se eliminó");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "El pais no existe, inténtelo de nuevo");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+           JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
+    }//GEN-LAST:event_btnRemoveCountryActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         Admin adminFrame = new Admin(); 
@@ -275,6 +310,11 @@ public class EditCountryFrame extends javax.swing.JFrame {
         }
   
     }//GEN-LAST:event_btnActualizarPaisActionPerformed
+
+    private void TablePaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePaisMouseClicked
+                                
+
+    }//GEN-LAST:event_TablePaisMouseClicked
 
     /**
      * @param args the command line arguments
@@ -320,7 +360,7 @@ public class EditCountryFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAddCountry;
     private javax.swing.JButton btnChangeNameCountry;
     private javax.swing.JButton btnChangeToState;
-    private javax.swing.JButton btnRemoveCiy;
+    private javax.swing.JButton btnRemoveCountry;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
